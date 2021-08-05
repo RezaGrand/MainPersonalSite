@@ -1,0 +1,469 @@
+/*    ---  Content Tables
+    ---  1.BodyStyles             ---
+    ---  2.BackGrounds            ---
+    ---  3.MainPart               ---
+    ---   3.1.Hero                ---
+    ---    3.1.1.WebDev           ---
+    ---     3.1.1.1.LeftArrows    ---
+    ---    3.1.2.HeroPic          ---
+    ---    3.1.3.MotionDes        ---
+    ---     3.1.3.1.RightArrows   ---
+    ---  4.MyName                 ---
+    ---    4.1.ImTitle            ---
+    ---    4.2.FullName           ---
+    ---  5.ShortBio               ---
+    ---  6.Nav                    ---
+    ---    6.1.RA2Logo            ---
+    ---     6.1.1.LogoToolTip     ---
+    ---    6.2.MenuButtons        ---
+    ---    6.3.LangSelector       ---   */
+
+
+@import "configs";
+
+body{
+  @include advancedPosition(null,null,100vh);
+  background: #232526;  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to left, #414345, #232526);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to left, #414345, #232526);
+  overflow: hidden;
+  font-family: $mainFont;
+  color: #ffffff;
+}
+
+.bodyCont{
+  @include advancedPosition(null,null,100%);
+  @include advancedFlex(column,null,null);
+  /*background-color: coral;*/
+}
+
+.mobileMenuCont{
+  @include advancedPosition(relative,null,10%);
+  @include advancedFlex(row,flex-start,center);
+  padding-left: 3vw;
+  //background-color: $accentColor;
+}
+
+.mobileMenu{
+  @include advancedPosition(absolute,50%,100vh);
+  left: -100%;
+  top: 0;
+  z-index: 49;
+  box-shadow: //5px 0 0 $accentColor,
+              10px 0 100px #000000 ;
+  background-color: #414345;
+  opacity: .99;
+  @include easeTrans(400ms);
+  transition-timing-function: ease-out;
+}
+
+.menuLefter{
+  left: 0;
+}
+
+.hamberBtnCont{
+  @include advancedPosition(null,3rem,3rem);
+  border-radius: 30%;
+  background-color: #414345;
+  background-image: url("../imgs/Hamburger_icon.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70%;
+  z-index: 50;
+  @include easeTrans(200ms);
+}
+
+.langContMobile{
+  margin-left: 3vw;
+  font-weight: 700;
+  font-size: 1rem;
+  z-index: 50;
+}
+
+.enLangMobile:hover, .faLangMobile:hover{
+  font-weight: 700;
+  color: $accentColor;
+}
+
+aside{
+  @include advancedPosition(null,100%,40%);
+  padding-bottom: 12%;
+  @include advancedFlex(row,center,flex-end);
+  @include easeTrans(300ms);
+  transition-timing-function: ease-out;
+  /*background-color: teal;*/
+
+}
+
+.topSquareCont, .bottomSquareCont{
+  @include advancedPosition(null,30%,60%);
+  display: block;
+}
+
+.topSquare, .bottomSquare{
+  @include advancedPosition(null,null,100%);
+  @include advancedFlex(column,center,center);
+  background-color: blanchedalmond;
+  background-image: url("../imgs/blueSquare.png")  ;
+  background-repeat: no-repeat;
+  background-size: 110% 110%;
+  background-position: center;
+  filter: saturate(0%);
+  font-size: 1rem;
+  @include easeTrans(500ms);
+  &:hover{
+    background-size: 125% 125%;
+    filter: saturate(100%);
+    @include easeTrans(500ms);
+  }
+}
+
+.topSquare h2{
+  margin-bottom: 10px;
+  @include easeTrans(500ms);
+}
+
+.midSquare{
+  @include advancedPosition(relative,40%,60%);
+  background-color: #313334;
+  background-image: url("../imgs/picBGabstract.svg");
+  background-repeat: no-repeat;
+  background-size:  cover;
+  background-position:  left;
+  @include easeTrans(500ms);
+  &:hover{
+    background-position: center;
+  &:hover .heroPic{
+      transform: scale(1.05,1.05) rotateZ(-5deg);
+    }
+  }
+}
+
+.heroPic{
+  @include advancedPosition(absolute,47vw,null);
+  /*left:6rem;*/
+  left: -3.5vw;
+  bottom:-3.5vh;
+  z-index: 1000;
+  filter: drop-shadow(3px 3px 5px #000000) ;
+  @include easeTrans(500ms);
+  /*background-color: red;*/
+  @media (min-width: 640px){
+    &{
+      @include advancedPosition(null,42vw,null);
+      left: -.25rem;
+      bottom: -7rem;
+    }
+  }
+}
+
+.bottomSquare{
+  background-image: url("../imgs/redSquare.png");
+  background-color: forestgreen;
+}
+
+.webTitle, .motionTitle{
+  font-weight: 900;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+  @include easeTrans(500ms);
+}
+
+.motionTitle{
+  letter-spacing: 2px;
+}
+
+.webTitle{letter-spacing: 6px}
+
+.bottomSquare:hover .webTitle{
+  letter-spacing: 10px;
+  margin-bottom: 15px;
+}
+
+.topSquare:hover .motionTitle{
+  letter-spacing: 10px;
+  margin-bottom: 15px;
+}
+
+.developerTitle, .designerTitle{
+  font-weight: 200;
+}
+
+main{
+  @include advancedPosition(null,100%,50%);
+  @include advancedFlex(column,null,null);
+  @include easeTrans(300ms);
+  transition-timing-function: ease-out;
+  /*background-color: yellow;*/
+}
+
+.topMenu{
+  display: none;
+  opacity: 0;
+}
+
+.topMenuBtnCont{
+  display: none;
+  opacity: 0;
+}
+
+.nameCont{
+  @include advancedPosition(null,null,20%);
+  @include advancedFlex(row,center,center);
+  /*background-color: aqua;*/
+}
+
+.imTitle{
+  display: none;
+  opacity: 0;
+}
+
+.fullName{
+  @include advancedPosition(relative,85%,70%);
+  @include advancedFlex(row,center,center);
+  padding-top: .7rem;
+  font-size: 6vw;
+  font-weight: 900;
+  /*background-color: red;*/
+  background-image: url("../imgs/nameBgMyRect.svg");
+  background-repeat: no-repeat;
+  /*background-position: bottom left;*/
+  /*background-size: calc(120px + 70%);*/
+  background-position: center;
+  background-size: 100% 100%;
+  filter: drop-shadow(5px 5px #ffffff);
+  animation-name: nameBgAni;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-delay: 2s;
+  animation-duration: 5s;
+}
+
+@keyframes nameBgAni{
+  0%{transform: rotateZ(0deg);}
+  10%{transform: rotateZ(-.5deg);}
+  20%{transform: rotateZ(.5deg);}
+  30%{transform: rotateZ(0deg);}
+  40%{transform: rotateZ(0deg);}
+  50%{transform: rotateZ(-.5deg);}
+  60%{transform: rotateZ(.5deg);}
+  70%{transform: rotateZ(0deg);}
+  80%{transform: rotateZ(0deg);}
+  90%{transform: rotateZ(-.5deg);}
+  100%{transform: rotateZ(.5deg);}
+}
+
+.bigScreenBio{
+  display: none;
+  opacity: 0;
+}
+
+.shortBio{
+  @include advancedPosition(null,null,45%);
+  /*padding-left: 24%;*/
+  /*padding-top: 1.5rem;*/
+  @include advancedFlex(column,center,center);
+  /*background-color: blueviolet;*/
+  & p{
+    font-family: $secondFont;
+    font-size: 5vw;
+    font-weight: 400;
+    line-height: 2.5rem;
+    /*background-color: chocolate;*/
+  }
+  &:hover .boldRedText{
+    color: $accentColor;
+  }
+}
+
+
+.boldRedText{
+  color: #EE5F4D;
+  font-weight: 600;
+  @include easeTrans(500ms);
+}
+
+.smallText{
+  font-size: 3vw;
+}
+
+.socials{
+  @include advancedPosition(null,null,20%);
+  @include advancedFlex(row,null,center);
+  /*background-color: rebeccapurple;*/
+}
+
+.socialWhiteSpace{
+  display: none;
+  opacity: 0;
+  /*background-color: #ffffff;*/
+}
+
+.socialsText{
+  @include advancedPosition(null,20%,null);
+  text-align: left;
+  white-space: nowrap;
+  padding-left: 3vw;
+  /*background-color: hotpink;*/
+  & h3{
+    font-family: $secondFont;
+    font-size: 3.5vw;
+    font-weight: 600;
+    /*background-color: #fdf497;*/
+  }
+}
+
+.socialIconsCont{
+  @include advancedPosition(null,70%,100%);
+  padding-left: 3vw;
+  @include advancedFlex(row,space-evenly,center);
+  /*background-color: yellow;*/
+}
+
+.socialwrapper{
+  /*width: 3rem;*/
+  /*height: 3rem;*/
+  @include advancedPosition(null,10vw,10vw);
+  border-radius: 40%;
+  background-color: #414345;
+  box-shadow:1px 1px 1px $accentColor ;
+  /*box-shadow:4px 6px 5px rgba(0, 0, 0, .1) ;*/
+  @include easeTrans(500ms);
+  &:hover{
+    box-shadow:0 0 5px rgba(0, 0, 0, .1) ;
+  }
+}
+
+.socialIcon{
+  @include advancedPosition(null,10vw,10vw);
+  border-radius: 40%;
+  /*background-color: #414345;*/
+  background-size: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: saturate(0%);
+  @include easeTrans(500ms);
+  &:hover{
+    background-size: 55%;
+    filter: saturate(100%);
+    transform: rotateZ(360deg);
+  }
+}
+
+.linkedinIcon{
+  background-image: url("../imgs/linkedinicon.svg");
+  &:hover{
+    background-color:  #0072b1;
+  }
+}
+
+.githubIcon{
+  background-image: url("../imgs/githubicon.svg");
+  &:hover{
+    background-color:  #171515;
+  }
+}
+
+.telegramIcon{
+  background-image: url("../imgs/telegram.png");
+  /*background-size: 60%;*/
+  &:hover{
+    background-color:  #0088CC;
+  }
+}
+
+.instagramIcon{
+  background-image: url("../imgs/instagramicon.svg");
+  background-size: 60%;
+  &:hover .instagramGradiant{
+    opacity: 1;
+  }
+}
+
+.instagramGradiant{
+  @include advancedPosition(null,100%,100%);
+  border-radius: 40%;
+  background:
+  center center/65% no-repeat
+  url("../imgs/instagramicon.svg") ,
+  center/cover no-repeat
+  radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  opacity: 0;
+  @include easeTrans(500ms);
+}
+
+.youtubeIcon{
+  background-image: url("../imgs/youtubeicon.svg");
+  &:hover{
+    background-color: #FF0000;
+  }
+}
+
+.yahooIcon{
+  background-image: url("../imgs/yahooicon.svg");
+  &:hover{
+    background-color: #430297;}
+}
+
+footer{
+  @include advancedPosition(null,null,15%);
+  padding-right: 20px;
+  @include advancedFlex(column,center,flex-end);
+  /*background-color: olivedrab;*/
+}
+
+.logoCont{
+  @include advancedPosition(relative,null,100%);
+  @include advancedFlex(column,center,center);
+  /*background-color: #EE5F4D;*/
+  & img{
+    @include advancedPosition(null,50px,null);
+  }
+  &:hover .logoToolTip{
+    bottom: 1rem;
+  }
+}
+
+.logoToolTip{
+  @include advancedPosition(absolute,18rem,2.5rem);
+  left: -18.5rem;
+  bottom: -10rem;
+  @include advancedFlex(row,center,center);
+  border-radius: .5rem;
+  color: #ffffff;
+  background-color: #313334;
+  @include easeTrans(300ms);
+  &::after{
+    box-sizing: border-box;
+    content: "";
+    @include advancedPosition(absolute,2rem,2rem);
+    right: -1.5rem;
+    bottom: .25rem;
+    border-right: 1rem solid transparent;
+    border-bottom: 1rem solid transparent;
+    border-top: 1rem solid transparent;
+    border-left: 1rem solid #313334;
+    /*background-color: $accentColor;*/
+  }
+}
+
+.logoSubText{
+  position: relative;
+  padding-left: 8px;
+  font-size: 10px;
+  /*background-color: blue;*/
+  &::after{
+    content: "";
+    @include advancedPosition(absolute,50px,5px);
+    right: -54px;
+    bottom: 3px;
+    background-color: $accentColor;
+  }
+}
+
+.bluring{
+  filter: blur(5px);
+}

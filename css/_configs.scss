@@ -1,0 +1,29 @@
+/*    ---    Variables       ---   */
+  //$accentColor: #00D193;
+  $accentColor: #00D193;
+  $mainFont: 'Montserrat', sans-serif;
+  $secondFont: 'Quicksand' , sans-serif;
+
+
+
+/*    ---    Mixins       ---   */
+@mixin easeTrans($transDur){
+  //color:darkorange;
+  transition: all;
+  transition-duration: $transDur;
+  transition-timing-function: ease-in-out;
+}
+
+@mixin advancedFlex($flexDir,$flexJust,$flexAlign){
+  display: flex;
+  flex-direction: $flexDir;
+  flex-wrap: nowrap;
+  justify-content: $flexJust;
+  align-items: $flexAlign;
+}
+
+@mixin advancedPosition($posi,$wdth,$higt){
+  position: $posi;
+  width: $wdth;
+  height: $higt;
+}
