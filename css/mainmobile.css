@@ -69,6 +69,7 @@ body {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
+  overflow: hidden;
   /*background-color: coral;*/ }
 
 .hamberBtnCont {
@@ -84,7 +85,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 70%;
-  z-index: 99;
+  z-index: 98;
   transition: all;
   transition-duration: 200ms;
   transition-timing-function: ease-in-out; }

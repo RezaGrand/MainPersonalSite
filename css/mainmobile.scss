@@ -39,6 +39,7 @@ body{
 .bodyCont{
   @include advancedPosition(null,null,100vh);
   @include advancedFlex(column,null,null);
+  overflow: hidden;
   /*background-color: coral;*/
 }
 
@@ -53,7 +54,7 @@ body{
   background-repeat: no-repeat;
   background-position: center;
   background-size: 70%;
-  z-index: 99;
+  z-index: 98;
   @include easeTrans(200ms);
 }
 
