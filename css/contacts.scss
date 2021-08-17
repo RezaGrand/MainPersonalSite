@@ -1,0 +1,187 @@
+/*    ---  Content Tables
+    ---  1.BodyStyles             ---
+    ---  2.BackGrounds            ---
+    ---  3.MainPart               ---
+    ---   3.1.Hero                ---
+    ---    3.1.1.WebDev           ---
+    ---     3.1.1.1.LeftArrows    ---
+    ---    3.1.2.HeroPic          ---
+    ---    3.1.3.MotionDes        ---
+    ---     3.1.3.1.RightArrows   ---
+    ---  4.MyName                 ---
+    ---    4.1.ImTitle            ---
+    ---    4.2.FullName           ---
+    ---  5.ShortBio               ---
+    ---  6.Nav                    ---
+    ---    6.1.RA2Logo            ---
+    ---     6.1.1.LogoToolTip     ---
+    ---    6.2.MenuButtons        ---
+    ---    6.3.LangSelector       ---   */
+
+@import "configs";
+
+
+
+body{
+  @include advancedPosition(null,null,100vh);
+  min-height: 750px;
+  background: #232526;  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to left, #414345, #232526);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to left, #414345, #232526);
+  //overflow: hidden;
+  font-family: $mainFont;
+  color: #ffffff;
+}
+.mobileMenuCont{
+  display: none;
+  opacity: 0;
+}
+
+.bodyCont{
+  @include advancedPosition(null,null,100%);
+  display: flex;
+  /*background-color: coral;*/
+}
+
+main{
+  @include advancedPosition(null,100%,null);
+  @include advancedFlex(column,null,center);
+  /*background-color: yellow;*/
+}
+
+.topMenu{
+  @include advancedPosition(null,100%,10%);
+  @include advancedFlex(row,flex-end,null);
+  font-weight: 700;
+  font-size: 1rem;
+  //background-color: steelblue;
+}
+
+.topMenuBtnCont{
+  @include advancedPosition(null,null,100%);
+  padding: 0 2px;
+  margin-right: 2.5vw;
+  @include advancedFlex(row,center,center);
+  /*background-color: coral;*/
+}
+
+.menuBtn{
+  @include advancedPosition(relative,100%,50%);
+  @include advancedFlex(row,center,center);
+  overflow: hidden;
+  @include easeTrans(150ms);
+  /*background-color: yellow;*/
+  &::after, &::before{
+    @include advancedPosition(absolute,100%,4px);
+    bottom: 0;
+    left: -100%;
+    content: "";
+    border-radius: 10px;
+    background-color: $accentColor;
+    @include easeTrans(150ms);
+  }
+  &::before{
+    left: -120%;
+    background-color: yellow;
+  }
+  &:hover{
+    color: $accentColor;
+  }
+  &:hover::after, &:hover::before{
+    left: 100%;
+    transition-duration: 400ms;
+  }
+  &:hover::before{
+    transition-delay: 130ms;
+  }
+}
+
+.downloadBtn{
+  @include advancedPosition(null,100%,null);
+  padding: 0 15px;
+  background-color: $accentColor;
+  border-radius: 1rem;
+  @include easeTrans(300ms);
+  &:hover{
+    background-color: #ffffff;
+    color: $accentColor;
+  }
+  &::after, &::before{
+    display: none;
+  }
+}
+
+.langBtn{
+  @include advancedPosition(null,5rem,null);
+  /*background-color: #fdf497;*/
+  & a:hover{
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: $accentColor;
+  }
+}
+
+.slideShowWrapper{
+  @include advancedPosition(relative,800px,500px);
+  overflow: hidden;
+  //background: red;
+}
+
+.slidesCont{
+  @include advancedFlex(row,flex-start,center);
+  @include advancedPosition(absolute,2400px,100%);
+  @include easeTrans(400ms);
+  left:0;
+  top:0;
+}
+
+.slideGen{
+  @include advancedPosition(null,800px,100%);
+
+}
+
+.slideTest1{
+  background: yellow;
+  background-image: url("../imgs/slideTest1.jpg");
+  background-size: cover;
+  background-position: center;
+
+}
+.slideTest2{
+  background: blue;
+  background-image: url("../imgs/slideTest2.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.slideTest3{
+  background: green;
+  background-image: url("../imgs/slideTest3.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.arrowDivs{
+  @include advancedPosition(absolute,4rem,4rem);
+  @include advancedFlex(column,center,center);
+  border-radius: 50%;
+  top:50%;
+  background-color: white;
+  opacity: .5;
+  color:#d6249f;
+  font-weight: 900;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 10;
+  &:hover{
+    opacity:.7;
+  }
+}
+.rightMover{
+ right:1rem;
+
+}
+.leftMover{
+  left:1rem;
+}

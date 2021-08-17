@@ -1,0 +1,36 @@
+/*    ---  Content Tables
+    ---  1.BodyStyles             ---
+    ---  2.BackGrounds            ---
+    ---  3.MainPart               ---
+    ---   3.1.Hero                ---
+    ---    3.1.1.WebDev           ---
+    ---     3.1.1.1.LeftArrows    ---
+    ---    3.1.2.HeroPic          ---
+    ---    3.1.3.MotionDes        ---
+    ---     3.1.3.1.RightArrows   ---
+    ---  4.MyName                 ---
+    ---    4.1.ImTitle            ---
+    ---    4.2.FullName           ---
+    ---  5.ShortBio               ---
+    ---  6.Nav                    ---
+    ---    6.1.RA2Logo            ---
+    ---     6.1.1.LogoToolTip     ---
+    ---    6.2.MenuButtons        ---
+    ---    6.3.LangSelector       ---   */
+
+@import "configs";
+
+
+
+body{
+  @include advancedPosition(null,null,100vh);
+  min-height: 750px;
+  background: #232526;  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to left, #414345, #232526);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to left, #414345, #232526);
+  overflow: hidden;
+  font-family: $mainFont;
+  color: #ffffff;
+}

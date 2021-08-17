@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA;;;;;;;;;;;;;;;;;;0CAkB0C;AClB1C,qCAAqC;AAOrC,kCAAkC;ADiBlC,IAAI;ECEF,MAAM,EDD8B,KAAK;EACzC,UAAU,EAAE,KAAK;EACjB,UAAU,EAAE,OAAO;EAAG,+BAA+B;EACrD,gCAAgC;EAChC,UAAU,EAAE,kDAAkD;EAC9D,sEAAsE;EACtE,UAAU,EAAE,0CAA0C;EACtD,QAAQ,EAAE,MAAM;EAChB,WAAW,EC/BA,wBAAwB;EDgCnC,KAAK,EAAE,OAAO",
+"sources": ["contactsmobile.scss","_configs.scss"],
+"names": [],
+"file": "contactsmobile.css"
+}

@@ -1,10 +1,9 @@
 /*    ---    Variables       ---   */
-  //$accentColor: #00D193;
   $accentColor: #00D193;
   $mainFont: 'Montserrat', sans-serif;
   $secondFont: 'Quicksand' , sans-serif;
-
-
+  $mainFaFont: 'Lalezar', cursive , sans-serif;
+  $secondFaFont: 'Almarai', sans-serif;
 
 /*    ---    Mixins       ---   */
 @mixin easeTrans($transDur){
@@ -26,4 +25,35 @@
   position: $posi;
   width: $wdth;
   height: $higt;
+}
+
+@mixin preloadeAnimation{
+  .preloadDiv{
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 99;
+    @include advancedFlex(null,center,center);
+    background: #232526;  /* fallback for old browsers */
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to left, #414345, #232526);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to left, #414345, #232526);
+    font-size: 2vw;
+    font-family: sans-serif;
+  }
+  .opacityZero{
+    //opacity: 0;
+    @include easeTrans(500ms);
+    animation-name: slideOut;
+    animation-duration: 500ms;
+    animation-fill-mode:forwards;
+    animation-timing-function: ease-in;
+  }
+  @keyframes slideOut {
+    to {top:-100%;}
+  }
+
 }

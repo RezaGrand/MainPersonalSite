@@ -19,27 +19,16 @@
     <!--     Google Fonts       -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700;900&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700;900&family=Quicksand:wght@400;600&family=Almarai:wght@300;700&family=Lalezar&display=swap" rel="stylesheet">
     <!--     StyleSheets       -->
     <link rel="stylesheet" href="css/mcleodreset.css">
     <link rel="stylesheet" href="css/main.css" media="(min-width: 751px)">
     <link rel="stylesheet" href="css/mainmobile.css" media="(max-width: 750px)">
 </head>
 <body>
+    <div class="preloadDiv">Reza Aghamohammadi Artworks</div>
     <div class="bodyCont">
-        <div class="mobileMenuCont">
-            <div class="mobileMenu">
 
-            </div>
-            <div class="hamberBtnCont">
-
-            </div>
-            <div class="langContMobile">
-                <a href="#" class="enLangMobile">EN</a>
-                <span>|</span>
-                <a href="#" class="faLangMobile">FA</a>
-            </div>
-        </div> <!--      End of mobileMenu        -->
         <aside id="bbb">
             <a href="#MotionPage" class="topSquareCont" >
                 <div class="topSquare">
@@ -50,7 +39,7 @@
             <div class="midSquare">
 <!--                <img src="imgs/RezaAghamohammadiPortrait.webp" alt="Reza Aghamohammadi's Picture" class="heroPic">-->
                 <img   srcset="imgs/RezaAghamohammadiPortrait.webp 1x"
-                       src="imgs/RezaAghamohammadiPortrait.png" class="heroPic" id="ggg">
+                       src="imgs/RezaAghamohammadiPortrait.png" class="heroPic" id="ggg" alt="Reza Aghamohammadi Portrait Picture">
 
             </div><!--      End of Middle Square        -->
             <a href="#WebDevPage" class="bottomSquareCont" >
@@ -61,43 +50,59 @@
             </a><!--      End of Bottom Square        -->
         </aside> <!--      End of aside        -->
         <main>
+            <div class="hamberBtnCont">
+
+            </div>
             <nav class="topMenu">
-                <a href="#homePage" class="homeBtnCont topMenuBtnCont">
+                <a href="index.html" class="homeBtnCont topMenuBtnCont">
                     <div class="homeBtn menuBtn">
                         Home
                     </div>
                 </a>
-                <a href="#resumePage" class="resumeBtnCont topMenuBtnCont">
+                <a href="resume.html" class="resumeBtnCont topMenuBtnCont">
                     <div class="resumeBtn menuBtn">
                         Resume
                     </div>
                 </a>
-                <a href="#artworksPage" class="artworksBtnCont topMenuBtnCont">
+                <a href="projects.html" class="artworksBtnCont topMenuBtnCont">
                     <div class="artworksBtn menuBtn">
                         Artworks
                     </div>
                 </a>
-                <a href="#blogPage" class="blogBtnCont topMenuBtnCont">
+                <a href="blog.html" class="blogBtnCont topMenuBtnCont">
                     <div class="blogBtn menuBtn">
                         Blog
                     </div>
                 </a>
-                <a href="#hirePage" class="hireBtnCont topMenuBtnCont">
+                <a href="contacts.html" class="hireBtnCont topMenuBtnCont">
                     <div class="hireBtn menuBtn">
                         Hire Me
                     </div>
                 </a>
-                <a href="#downloadCV" class="downloadBtnCont topMenuBtnCont">
+                <a href="#downloadCV" class="downloadBtnCont topMenuBtnCont" target="_blank">
                     <div class="downloadBtn menuBtn">
                         Download CV
                     </div>
                 </a>
-                <div class="langBtn topMenuBtnCont">
-                    <a href="#" class="engLang">EN&nbsp;</a>
-                    <span>&nbsp;|&nbsp;</span>
-                    <a href="#" class="faLang">&nbsp;FA</a>
-                </div>
             </nav><!--      End of Top Menu       -->
+            <div class="langMotherCont">
+                <div class="selectedLang">
+                    <img src="imgs/englandFlag.jpg" alt="English Language" width="25px">
+                    EN
+                    <i class="langArrow">&#8227;</i>
+                </div>
+                <div class="langsCont">
+                    <div class="faLangSelector">
+                        <img src="imgs/iranFlag.jpg" alt="Persian Language" width="25px">
+                        فا
+                    </div>
+                    <div class="engLangSelector">
+                        <img src="imgs/englandFlag.jpg" alt="English Language" width="25px">
+                        EN
+                    </div>
+                </div>
+            </div><!--      End of Lang       -->
+
             <section class="nameCont">
                 <div class="imTitle">
                    <h2>I'm</h2>
@@ -109,27 +114,27 @@
             </section><!--      End of Full Name       -->
             <section class="shortBio">
                 <div class="bigScreenBio">
-                    <p>
+                    <p class="firstParag">
                         <span class="boldRedText">Crazy</span>&nbsp;Motion Deisgner,
                         <span class="boldRedText">&nbsp;Bold</span>&nbsp;Web Developer
                     </p>
-                    <p>
+                    <p class="secondParag">
                         <span class="smallText">&nbsp;And</span>
                         <span class="boldRedText">&nbsp;Creative</span>&nbsp;Content Writer
                         <span class="smallText">&nbsp;&nbsp;Based in Tehran, Iran.</span>
                     </p>
                 </div>
                 <div class="smallScreenBio">
-                    <p>
+                    <p class="smallBioFirstP">
                         <span class="boldRedText">Crazy</span>&nbsp;Motion Deisgner,
                     </p>
-                    <p>
+                    <p class="smallBioSecondP">
                         <span class="boldRedText">Bold</span>&nbsp;Web Developer<span class="smallText">&nbsp;And</span>
                     </p>
-                    <p>
+                    <p class="smallBioThirdP">
                         <span class="boldRedText">Creative</span>&nbsp;Content Writer
                     </p>
-                    <p>
+                    <p class="smallBioLastP">
                         <span class="smallText">Based in Tehran, Iran.</span>
                     </p>
                 </div>
@@ -162,7 +167,7 @@
                     </a>
                 </div>
             </section><!--      End of Socials        -->
-            <footer>
+            <footer id="footer">
                 <div class="logoCont">
                     <div class="logoToolTip"><p>Reza Aghamohammadi Artworks</p></div>
                     <img src="imgs/RA2LogoDark350px.svg" width="70px" alt="Reza Aghamohammadi Artworks RA2">
@@ -171,6 +176,6 @@
             </footer><!--      End of Footer        -->
         </main> <!--      End of main        -->
     </div>   <!--      End of bodyCont        -->
-    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="Apps/index.js"></script>
 </body>
 </html>

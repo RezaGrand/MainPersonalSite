@@ -20,7 +20,7 @@
 
 @import "configs";
 
-
+@include preloadeAnimation;
 
 body{
   @include advancedPosition(null,null,100vh);
@@ -97,7 +97,7 @@ aside{
   @include advancedPosition(absolute,130%,null);
   left:6rem;
   bottom:-4rem;
-  z-index: 1000;
+  z-index: 10;
   filter: drop-shadow(3px 3px 5px #000000);
   @include easeTrans(500ms);
   /*background-color: red;*/
@@ -124,25 +124,50 @@ aside{
   margin-bottom: 15px;
 }
 
+.motionTitleFa, .webTitleFa {
+  font-family: $mainFaFont;
+  font-size: 2rem;
+}
+
+.webTitleFa {
+  font-size: 3rem;
+}
+
+.designerTitleFa, .developerTitleFa{
+  font-family: $mainFaFont;
+  font-size: 2rem;
+}
+
+
 main{
   @include advancedPosition(null,85%,null);
   @include advancedFlex(column,null,null);
   /*background-color: yellow;*/
 }
 
+.hamberBtnCont{display: none; opacity: 0;}
+
 .topMenu{
-  @include advancedPosition(null,null,10%);
+  @include advancedPosition(null,100%,10%);
   @include advancedFlex(row,flex-end,null);
   font-weight: 700;
   font-size: 1rem;
-  /*background-color: steelblue;*/
+  padding-right: 6rem;
+  //background-color: steelblue;
 }
+
 .topMenuBtnCont{
   @include advancedPosition(null,null,100%);
   padding: 0 2px;
   margin-right: 2.5vw;
   @include advancedFlex(row,center,center);
   /*background-color: coral;*/
+}
+
+.homeBtnCont{
+  pointer-events: none;
+  cursor: default;
+  color: $accentColor;
 }
 
 .menuBtn{
@@ -176,6 +201,10 @@ main{
   }
 }
 
+.menuBtnFa{
+  font-family: $secondFaFont;
+}
+
 .downloadBtn{
   @include advancedPosition(null,100%,null);
   padding: 0 15px;
@@ -191,20 +220,88 @@ main{
   }
 }
 
-.langBtn{
-  @include advancedPosition(null,5rem,null);
-  /*background-color: #fdf497;*/
-  & a:hover{
-    font-size: 1.1rem;
-    font-weight: 900;
+.langMotherCont{
+  @include advancedPosition(absolute,5rem,10%);
+  @include advancedFlex(row,center,center);
+  min-height: 5rem;
+  top:0;
+  right:2rem;
+  z-index: 98;
+  font-weight: 700;
+  font-size: 1rem;
+  //background-color: #fdf497;
+}
+
+.selectedLang{
+  @include advancedPosition(null,100%,45%);
+  @include advancedFlex(row,space-between,center);
+  padding: 0 2px 0 4px;
+  color: #ffffff;
+  border-radius: 5px;
+  border: $accentColor solid 1.5px;
+  cursor: pointer;
+  @include easeTrans(200ms);
+  &:hover{
+    background-color: #00D193;
+    color:#ffffff;
+  }
+  &:hover .langArrow{
+    transform: rotateZ(90deg);
+    color:#ffffff;
+  }
+}
+
+.langArrow{
+  color: #00D193;
+  font-size: 2rem;
+  transform: rotateZ(0deg);
+  @include easeTrans(200ms);
+}
+
+.langsCont{
+  @include advancedPosition(absolute,100%,5rem);
+  top:70%;
+  padding-top: 8px;
+  display: none;
+  opacity: 0;
+  //background-color: #EE5F4D;
+}
+.langsContDisplayer{
+  opacity: 1;
+  display: block;
+  @include easeTrans(200ms);
+}
+
+.engLangSelector, .faLangSelector{
+  @include advancedFlex(row,space-between,center);
+  @include advancedPosition(null,100%,50%);
+  //padding: 6px 12px 6px 8px;
+  //margin-bottom: 8px;
+  background-color: $accentColor;
+  border-radius: 0 0 5px 5px;
+  padding: 0 12px;
+  cursor: pointer;
+  @include easeTrans(200ms);
+  &:hover{
+    background-color: #ffffff;
     color: $accentColor;
   }
+}
+
+.faLangSelector{
+  border-bottom: solid #ffffff 1px;
+  border-radius: 5px 5px 0 0;
+  font-family: $secondFaFont;
+}
+
+.selectedLangFa{
+  font-family: $secondFaFont;
 }
 
 .nameCont{
   @include advancedPosition(null,null,45%);
   display: flex;
-  /*background-color: aqua;*/
+  //background-color: aqua;
 }
 
 .imTitle{
@@ -237,6 +334,14 @@ main{
   animation-duration: 5s;
 }
 
+.fullNameFa{
+   font-family: $mainFaFont;
+   font-size: 5.5vw;
+   font-weight: 400;
+   padding-bottom: 0;
+   padding-left: 5vw;
+ }
+
 @keyframes nameBgAni{
   0%{transform: rotateZ(0deg);}
   10%{transform: rotateZ(-.5deg);}
@@ -268,6 +373,12 @@ main{
   font-weight: 400;
   line-height: 3.5rem;
   /*background-color: chocolate;*/
+}
+.bigScreenBioFa{
+  display: flex;
+  flex-flow: column;
+  align-items: flex-end;
+  padding-right: 15vw;
 }
 
 .shortBio:hover .boldRedText{
@@ -453,7 +564,11 @@ footer{
     background-color: $accentColor;
   }
 }
-
+@media (max-width: 1500px) {
+  .langMotherCont {
+    right: 1rem;
+  }
+}
 @media (max-width: 970px) {
   aside{
     @include advancedPosition(null,10%,null);
@@ -470,11 +585,22 @@ footer{
     padding: 0 2px;
   }
 
-  .langBtn{
-    @include advancedPosition(null,3rem,null);
-    & a:hover{
-      font-size: 1rem;
-    }
+  .langMotherCont{
+    right:1rem;
+    width: 3.5rem;
+    font-size: .75rem;
+  }
+
+  .faLangSelector, .engLangSelector{
+    padding: 0 6px;
+  }
+
+  .langMotherCont img{
+    width: 20px;
+  }
+
+  .langArrow{
+    font-size: 1rem;
   }
 
   .heroPic{

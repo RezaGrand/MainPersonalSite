@@ -19,6 +19,38 @@
     ---    6.3.LangSelector       ---   */
 /*    ---    Variables       ---   */
 /*    ---    Mixins       ---   */
+.preloadDiv {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 99;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  background: #232526;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to left, #414345, #232526);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to left, #414345, #232526);
+  font-size: 2vw;
+  font-family: sans-serif; }
+
+.opacityZero {
+  transition: all;
+  transition-duration: 500ms;
+  transition-timing-function: ease-in-out;
+  animation-name: slideOut;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in; }
+
+@keyframes slideOut {
+  to {
+    top: -100%; } }
 body {
   height: 100vh;
   min-height: 750px;
@@ -99,7 +131,7 @@ aside {
   width: 130%;
   left: 6rem;
   bottom: -4rem;
-  z-index: 1000;
+  z-index: 10;
   filter: drop-shadow(3px 3px 5px #000000);
   transition: all;
   transition-duration: 500ms;
@@ -125,6 +157,17 @@ aside {
   letter-spacing: 10px;
   margin-bottom: 15px; }
 
+.motionTitleFa, .webTitleFa {
+  font-family: "Lalezar", cursive, sans-serif;
+  font-size: 2rem; }
+
+.webTitleFa {
+  font-size: 3rem; }
+
+.designerTitleFa, .developerTitleFa {
+  font-family: "Lalezar", cursive, sans-serif;
+  font-size: 2rem; }
+
 main {
   width: 85%;
   display: flex;
@@ -132,7 +175,12 @@ main {
   flex-wrap: nowrap;
   /*background-color: yellow;*/ }
 
+.hamberBtnCont {
+  display: none;
+  opacity: 0; }
+
 .topMenu {
+  width: 100%;
   height: 10%;
   display: flex;
   flex-direction: row;
@@ -140,7 +188,7 @@ main {
   justify-content: flex-end;
   font-weight: 700;
   font-size: 1rem;
-  /*background-color: steelblue;*/ }
+  padding-right: 6rem; }
 
 .topMenuBtnCont {
   height: 100%;
@@ -152,6 +200,11 @@ main {
   justify-content: center;
   align-items: center;
   /*background-color: coral;*/ }
+
+.homeBtnCont {
+  pointer-events: none;
+  cursor: default;
+  color: #00D193; }
 
 .menuBtn {
   position: relative;
@@ -190,6 +243,9 @@ main {
   .menuBtn:hover::before {
     transition-delay: 130ms; }
 
+.menuBtnFa {
+  font-family: "Almarai", sans-serif; }
+
 .downloadBtn {
   width: 100%;
   padding: 0 15px;
@@ -204,18 +260,99 @@ main {
   .downloadBtn::after, .downloadBtn::before {
     display: none; }
 
-.langBtn {
+.langMotherCont {
+  position: absolute;
   width: 5rem;
-  /*background-color: #fdf497;*/ }
-  .langBtn a:hover {
-    font-size: 1.1rem;
-    font-weight: 900;
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 5rem;
+  top: 0;
+  right: 2rem;
+  z-index: 98;
+  font-weight: 700;
+  font-size: 1rem; }
+
+.selectedLang {
+  width: 100%;
+  height: 45%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2px 0 4px;
+  color: #ffffff;
+  border-radius: 5px;
+  border: #00D193 solid 1.5px;
+  cursor: pointer;
+  transition: all;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out; }
+  .selectedLang:hover {
+    background-color: #00D193;
+    color: #ffffff; }
+  .selectedLang:hover .langArrow {
+    transform: rotateZ(90deg);
+    color: #ffffff; }
+
+.langArrow {
+  color: #00D193;
+  font-size: 2rem;
+  transform: rotateZ(0deg);
+  transition: all;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out; }
+
+.langsCont {
+  position: absolute;
+  width: 100%;
+  height: 5rem;
+  top: 70%;
+  padding-top: 8px;
+  display: none;
+  opacity: 0; }
+
+.langsContDisplayer {
+  opacity: 1;
+  display: block;
+  transition: all;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out; }
+
+.engLangSelector, .faLangSelector {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+  background-color: #00D193;
+  border-radius: 0 0 5px 5px;
+  padding: 0 12px;
+  cursor: pointer;
+  transition: all;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out; }
+  .engLangSelector:hover, .faLangSelector:hover {
+    background-color: #ffffff;
     color: #00D193; }
+
+.faLangSelector {
+  border-bottom: solid #ffffff 1px;
+  border-radius: 5px 5px 0 0;
+  font-family: "Almarai", sans-serif; }
+
+.selectedLangFa {
+  font-family: "Almarai", sans-serif; }
 
 .nameCont {
   height: 45%;
-  display: flex;
-  /*background-color: aqua;*/ }
+  display: flex; }
 
 .imTitle {
   width: 20%;
@@ -254,6 +391,13 @@ main {
   animation-iteration-count: infinite;
   animation-delay: 2s;
   animation-duration: 5s; }
+
+.fullNameFa {
+  font-family: "Lalezar", cursive, sans-serif;
+  font-size: 5.5vw;
+  font-weight: 400;
+  padding-bottom: 0;
+  padding-left: 5vw; }
 
 @keyframes nameBgAni {
   0% {
@@ -297,6 +441,12 @@ main {
   font-weight: 400;
   line-height: 3.5rem;
   /*background-color: chocolate;*/ }
+
+.bigScreenBioFa {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-end;
+  padding-right: 15vw; }
 
 .shortBio:hover .boldRedText {
   color: #00D193; }
@@ -489,6 +639,9 @@ footer {
     bottom: 4px;
     background-color: #00D193; }
 
+@media (max-width: 1500px) {
+  .langMotherCont {
+    right: 1rem; } }
 @media (max-width: 970px) {
   aside {
     width: 10%;
@@ -502,10 +655,19 @@ footer {
     margin-left: 1vw;
     padding: 0 2px; }
 
-  .langBtn {
-    width: 3rem; }
-    .langBtn a:hover {
-      font-size: 1rem; }
+  .langMotherCont {
+    right: 1rem;
+    width: 3.5rem;
+    font-size: .75rem; }
+
+  .faLangSelector, .engLangSelector {
+    padding: 0 6px; }
+
+  .langMotherCont img {
+    width: 20px; }
+
+  .langArrow {
+    font-size: 1rem; }
 
   .heroPic {
     position: absolute;
