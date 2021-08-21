@@ -4,6 +4,12 @@ const nameCont = document.querySelector(".nameCont");
 const shortBio = document.querySelector(".shortBio");
 const footer = document.getElementById("footer");
 const hamberBtn = document.querySelector(".hamberBtnCont");
+
+const hamberTopLine = document.querySelector(".hamberTopLine");
+const hamberMiddleLine = document.querySelector(".hamberMiddleLine");
+const hamberBottomLine = document.querySelector(".hamberBottomLine");
+
+const topMenuBtnConts = document.querySelectorAll(".topMenuBtnCont");
 // ----------------------------      Lang Selection Variables       -------------------------------
 const selectedLang = document.querySelector(".selectedLang");
 const langsCont = document.querySelector(".langsCont");
@@ -38,11 +44,15 @@ const socialsText = document.querySelector(".socialsText h3");
 const preloadDiv = document.querySelector(".preloadDiv");
 
 let topMenuStyles =  getComputedStyle(topMenu);
+let hamberBtnStyles =  getComputedStyle(hamberBtn);
 // ----------------------------      Preload Animation       -------------------------------
 window.addEventListener("load", ()=>{
     preloadDiv.classList.add("opacityZero");
 });
-preloadDiv.addEventListener("transitionend", ()=>{preloadDiv.style.display="none";});
+
+preloadDiv.addEventListener("animationend", ()=>{
+    preloadDiv.style.display="none";
+});
 
 // ----------------------------      Language Change       -------------------------------
 if (!langUpdater){
@@ -64,10 +74,9 @@ function langUpdaterFunc(){
     bigName.classList.remove("fullNameFa");
     imTitle.textContent = "I'm";
 
-    if (topMenuStyles.flexDirection === "row-reverse") {
-        topMenu.style.flexDirection = "row";
-        topMenu.style.justifyContent = "flex-end";
-    }
+        if (topMenu.classList.contains("topMenuFa")){
+            topMenu.classList.remove("topMenuFa");
+        }
 
     for (let i = 0 ; i < 6 ; i++){menuBtns[i].classList.remove("menuBtnFa");}
     homeBtn.textContent = "Home"
@@ -126,10 +135,10 @@ function langUpdaterFunc(){
     bigName.classList.add("fullNameFa");
     imTitle.textContent = "";
 
-    if (topMenuStyles.flexDirection === "row") {
-        topMenu.style.flexDirection = "row-reverse";
-        topMenu.style.justifyContent = "flex-start";
-    }
+        if (!topMenu.classList.contains("topMenuFa")){
+
+            topMenu.classList.add("topMenuFa");
+        }
 
      for (let i = 0 ; i < 6 ; i++){menuBtns[i].classList.add("menuBtnFa");}
     homeBtn.textContent = "خانه"
@@ -181,22 +190,25 @@ function langUpdaterFunc(){
 }}
 
 // -----------------------------       new Lang       ----------------------------------------
-selectedLang.addEventListener("click", function (){
+selectedLang.addEventListener("click", function (e){
     langsCont.classList.toggle("langsContDisplayer");
+    e.stopPropagation();
 })
 
-faLangSelector.addEventListener("click", function (){
+faLangSelector.addEventListener("click", function (e){
     localStorage.setItem("lang", "fa");
     langUpdater = "fa";
     langUpdaterFunc();
     langsCont.classList.toggle("langsContDisplayer");
+    e.stopPropagation();
 })
 
-enLangSelector.addEventListener("click", function (){
+enLangSelector.addEventListener("click", function (e){
     localStorage.setItem("lang", "en");
     langUpdater = "en";
     langUpdaterFunc();
     langsCont.classList.toggle("langsContDisplayer");
+    e.stopPropagation();
 })
 
 // -----------------------------      Mobile Menu       ----------------------------------------
@@ -207,11 +219,25 @@ function showMobileMenu(e) {
     shortBio.classList.toggle("bluring");
     socials.classList.toggle("bluring");
     footer.classList.toggle("bluring");
+    if (langsCont.classList.contains("langsContDisplayer")){
+        langsCont.classList.toggle("langsContDisplayer");
+    }
+    hamberTopLine.classList.toggle("hamberTopLineAni");
+    hamberMiddleLine.classList.toggle("hamberMiddleLineAni");
+    hamberBottomLine.classList.toggle("hamberBottomLineAni");
+
+    topMenuBtnConts.forEach(topMenuBtnCont => {
+    topMenuBtnCont.classList.toggle("topMenuBtnContPush")
+    });
+
     e.stopPropagation();
 }
 
 hamberBtn.addEventListener("click", showMobileMenu);
 document.addEventListener("click", function(){
+    if (langsCont.classList.contains("langsContDisplayer")){
+        langsCont.classList.remove("langsContDisplayer");
+    }
     if (topMenu.classList.contains("menuLefter")){
         showMobileMenu();
     }

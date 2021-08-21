@@ -1,26 +1,25 @@
 /*    ---  Content Tables
-    ---  1.BodyStyles             ---
-    ---  2.BackGrounds            ---
-    ---  3.MainPart               ---
-    ---   3.1.Hero                ---
-    ---    3.1.1.WebDev           ---
-    ---     3.1.1.1.LeftArrows    ---
-    ---    3.1.2.HeroPic          ---
-    ---    3.1.3.MotionDes        ---
-    ---     3.1.3.1.RightArrows   ---
-    ---  4.MyName                 ---
-    ---    4.1.ImTitle            ---
-    ---    4.2.FullName           ---
-    ---  5.ShortBio               ---
-    ---  6.Nav                    ---
-    ---    6.1.RA2Logo            ---
-    ---     6.1.1.LogoToolTip     ---
-    ---    6.2.MenuButtons        ---
-    ---    6.3.LangSelector       ---   */
+    ---    1.imports & PreloadAni             ---
+    ---    2.Body                             ---
+    ---    3.Aside                            ---
+    ---     3.1.TopSquare                     ---
+    ---     3.2.MidSquare & HeroPic           ---
+    ---     3.3.BottomSquare                  ---
+    ---    4.Main                             ---
+    ---      4.1.TopMenu & LangSelector       ---
+    ---      4.2.FullName                     ---
+    ---    5.NameConts                        ---
+    ---    6.ShortBio                         ---
+    ---    7.Socials                          ---
+    ---    8.Logo & Logo ToolTip              ---
+    ---    9.MediaQueries                     --- */
 
 @import "configs";
+@import "components";
 
 @include preloadeAnimation;
+
+.smallScreenBio,.hamberBtnCont{display: none;opacity: 0;}
 
 body{
   @include advancedPosition(null,null,100vh);
@@ -39,11 +38,6 @@ body{
   @include advancedPosition(null,null,100%);
   display: flex;
   /*background-color: coral;*/
-}
-
-.mobileMenuCont{
-  display: none;
-  opacity: 0;
 }
 
 aside{
@@ -145,158 +139,9 @@ main{
   /*background-color: yellow;*/
 }
 
-.hamberBtnCont{display: none; opacity: 0;}
+@include topMenu;
 
-.topMenu{
-  @include advancedPosition(null,100%,10%);
-  @include advancedFlex(row,flex-end,null);
-  font-weight: 700;
-  font-size: 1rem;
-  padding-right: 6rem;
-  //background-color: steelblue;
-}
-
-.topMenuBtnCont{
-  @include advancedPosition(null,null,100%);
-  padding: 0 2px;
-  margin-right: 2.5vw;
-  @include advancedFlex(row,center,center);
-  /*background-color: coral;*/
-}
-
-.homeBtnCont{
-  pointer-events: none;
-  cursor: default;
-  color: $accentColor;
-}
-
-.menuBtn{
-  @include advancedPosition(relative,100%,50%);
-  @include advancedFlex(row,center,center);
-  overflow: hidden;
-  @include easeTrans(150ms);
-  /*background-color: yellow;*/
-  &::after, &::before{
-    @include advancedPosition(absolute,100%,4px);
-    bottom: 0;
-    left: -100%;
-    content: "";
-    border-radius: 10px;
-    background-color: $accentColor;
-    @include easeTrans(150ms);
-  }
-  &::before{
-    left: -120%;
-    background-color: yellow;
-  }
-  &:hover{
-    color: $accentColor;
-  }
-  &:hover::after, &:hover::before{
-    left: 100%;
-    transition-duration: 400ms;
-  }
-  &:hover::before{
-    transition-delay: 130ms;
-  }
-}
-
-.menuBtnFa{
-  font-family: $secondFaFont;
-}
-
-.downloadBtn{
-  @include advancedPosition(null,100%,null);
-  padding: 0 15px;
-  background-color: $accentColor;
-  border-radius: 1rem;
-  @include easeTrans(300ms);
-  &:hover{
-    background-color: #ffffff;
-    color: $accentColor;
-  }
-  &::after, &::before{
-    display: none;
-  }
-}
-
-.langMotherCont{
-  @include advancedPosition(absolute,5rem,10%);
-  @include advancedFlex(row,center,center);
-  min-height: 5rem;
-  top:0;
-  right:2rem;
-  z-index: 98;
-  font-weight: 700;
-  font-size: 1rem;
-  //background-color: #fdf497;
-}
-
-.selectedLang{
-  @include advancedPosition(null,100%,45%);
-  @include advancedFlex(row,space-between,center);
-  padding: 0 2px 0 4px;
-  color: #ffffff;
-  border-radius: 5px;
-  border: $accentColor solid 1.5px;
-  cursor: pointer;
-  @include easeTrans(200ms);
-  &:hover{
-    background-color: #00D193;
-    color:#ffffff;
-  }
-  &:hover .langArrow{
-    transform: rotateZ(90deg);
-    color:#ffffff;
-  }
-}
-
-.langArrow{
-  color: #00D193;
-  font-size: 2rem;
-  transform: rotateZ(0deg);
-  @include easeTrans(200ms);
-}
-
-.langsCont{
-  @include advancedPosition(absolute,100%,5rem);
-  top:70%;
-  padding-top: 8px;
-  display: none;
-  opacity: 0;
-  //background-color: #EE5F4D;
-}
-.langsContDisplayer{
-  opacity: 1;
-  display: block;
-  @include easeTrans(200ms);
-}
-
-.engLangSelector, .faLangSelector{
-  @include advancedFlex(row,space-between,center);
-  @include advancedPosition(null,100%,50%);
-  //padding: 6px 12px 6px 8px;
-  //margin-bottom: 8px;
-  background-color: $accentColor;
-  border-radius: 0 0 5px 5px;
-  padding: 0 12px;
-  cursor: pointer;
-  @include easeTrans(200ms);
-  &:hover{
-    background-color: #ffffff;
-    color: $accentColor;
-  }
-}
-
-.faLangSelector{
-  border-bottom: solid #ffffff 1px;
-  border-radius: 5px 5px 0 0;
-  font-family: $secondFaFont;
-}
-
-.selectedLangFa{
-  font-family: $secondFaFont;
-}
+@include langSelector;
 
 .nameCont{
   @include advancedPosition(null,null,45%);
@@ -356,10 +201,6 @@ main{
   100%{transform: rotateZ(.5deg);}
 }
 
-.smallScreenBio{
-  display: none;
-  opacity: 0;
-}
 .shortBio{
   height: 15%;
   padding-left: 24%;
@@ -367,6 +208,7 @@ main{
   @include advancedFlex(column,null,null);
   /*background-color: blueviolet;*/
 }
+
 .shortBio p{
   font-family: $secondFont;
   font-size: 2vw;
@@ -374,6 +216,7 @@ main{
   line-height: 3.5rem;
   /*background-color: chocolate;*/
 }
+
 .bigScreenBioFa{
   display: flex;
   flex-flow: column;
@@ -381,9 +224,7 @@ main{
   padding-right: 15vw;
 }
 
-.shortBio:hover .boldRedText{
-      color: $accentColor;
-    }
+.shortBio:hover .boldRedText{ color: $accentColor; }
 
 .boldRedText{
   color: #EE5F4D;
@@ -391,9 +232,7 @@ main{
   @include easeTrans(500ms);
 }
 
-.smallText{
-  font-size: 1vw;
-}
+.smallText{ font-size: 1vw; }
 
 .socials{
   @include advancedPosition(null,null,20%);

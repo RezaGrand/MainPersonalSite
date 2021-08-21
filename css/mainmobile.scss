@@ -1,27 +1,24 @@
 /*    ---  Content Tables
-    ---  1.BodyStyles             ---
-    ---  2.BackGrounds            ---
-    ---  3.MainPart               ---
-    ---   3.1.Hero                ---
-    ---    3.1.1.WebDev           ---
-    ---     3.1.1.1.LeftArrows    ---
-    ---    3.1.2.HeroPic          ---
-    ---    3.1.3.MotionDes        ---
-    ---     3.1.3.1.RightArrows   ---
-    ---  4.MyName                 ---
-    ---    4.1.ImTitle            ---
-    ---    4.2.FullName           ---
-    ---  5.ShortBio               ---
-    ---  6.Nav                    ---
-    ---    6.1.RA2Logo            ---
-    ---     6.1.1.LogoToolTip     ---
-    ---    6.2.MenuButtons        ---
-    ---    6.3.LangSelector       ---   */
-
+    ---    1.imports & PreloadAni             ---
+    ---    2.Body                             ---
+    ---    3.Aside                            ---
+    ---     3.1.TopSquare                     ---
+    ---     3.2.MidSquare & HeroPic           ---
+    ---     3.3.BottomSquare                  ---
+    ---    4.Main                             ---
+    ---      4.1.TopMenu & LangSelector       ---
+    ---      4.2.FullName                     ---
+    ---    5.NameConts                        ---
+    ---    6.ShortBio                         ---
+    ---    7.Socials                          ---
+    ---    8.Logo & Logo ToolTip              ---*/
 
 @import "configs";
+@import "mobileComponents";
 
 @include preloadeAnimation;
+
+.socialWhiteSpace,.socialsText,.imTitle,.bigScreenBio,.logoToolTip,.langArrow{display: none;opacity: 0;}
 
 body{
   @include advancedPosition(null,null,100vh);
@@ -43,182 +40,11 @@ body{
   /*background-color: coral;*/
 }
 
-.hamberBtnCont{
-  @include advancedPosition(absolute,3rem,3rem);
-  top:1rem;
-  left:1rem;
-  cursor:pointer;
-  border-radius: 30%;
-  background-color: #414345;
-  background-image: url("../imgs/Hamburger_icon.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 70%;
-  z-index: 98;
-  @include easeTrans(200ms);
-}
+@include hamberMixin;
 
-.topMenu{
-  @include advancedPosition(absolute,50%,100vh);
-  @include advancedFlex(column,null,center);
-  top:0;
-  left:-100%;
-  padding-top: 5rem;
-  opacity: .99;
-  z-index: 90;
-  @include easeTrans(300ms);
-  transition-timing-function: ease-in-out;
-  box-shadow: 10px 0 100px #000000;
-  background-color: #313334;
-}
+@include topMenuMobile;
 
-.topMenuBtnCont{
-  display: inline-block;
-  @include advancedPosition(null,100%,10%);
-  margin-bottom: 1rem;
-  //background-color: coral;
-}
-
-.homeBtnCont{
-  pointer-events: none;
-  cursor: default;
-  color: $accentColor;
-}
-
-.menuBtn{
-  font-size: 1.2rem;
-  @include advancedPosition(relative,100%,100%);
-  @include advancedFlex(row,center,center);
-  overflow: hidden;
-  @include easeTrans(150ms);
-  /*background-color: yellow;*/
-  &::after, &::before{
-    @include advancedPosition(absolute,100%,4px);
-    bottom: 0;
-    left: -100%;
-    content: "";
-    border-radius: 10px;
-    background-color: $accentColor;
-    @include easeTrans(150ms);
-  }
-  &::before{
-    left: -120%;
-    background-color: yellow;
-  }
-  &:hover{
-    color: $accentColor;
-  }
-  &:hover::after, &:hover::before{
-    left: 100%;
-    transition-duration: 400ms;
-  }
-  &:hover::before{
-    transition-delay: 130ms;
-  }
-}
-
-.menuBtnFa{
-  font-family: $secondFaFont;
-}
-
-.downloadBtnCont{@include advancedFlex(row,center,center);}
-.downloadBtn{
-  @include advancedPosition(null,80%,80%);
-  padding: 0 15px;
-  background-color: $accentColor;
-  border-radius: 1rem;
-  @include easeTrans(300ms);
-  &:hover{
-    background-color: #ffffff;
-    color: $accentColor;
-  }
-  &::after, &::before{
-    display: none;
-  }
-}
-
-.langMotherCont{
-  @include advancedPosition(absolute,3rem,3rem);
-  @include advancedFlex(row,center,center);
-  min-height: 5rem;
-  top:4rem;
-  left:1rem;
-  z-index: 98;
-  font-weight: 700;
-  font-size: 1rem;
-  //background-color: #fdf497;
-}
-
-.selectedLang{
-  @include advancedPosition(null,3rem,3rem);
-  @include advancedFlex(column-reverse,space-between,center);
-  padding: 4px;
-  color: #ffffff;
-  border: $accentColor solid 1.5px;
-  cursor: pointer;
-  border-radius: 30%;
-  background-color: $accentColor;
-  @include easeTrans(200ms);
-  &:hover{
-    background-color: #ffffff;
-    color: $accentColor;
-  }
-  &:hover .langArrow{
-    transform: rotateZ(90deg);
-    color:#ffffff;
-  }
-}
-
-.langArrow{
- display:none;
-}
-
-.langsCont{
-  @include advancedPosition(absolute,100%,6rem);
-  top:80%;
-  padding-top: 8px;
-  display: none;
-  opacity: 0;
-  //background-color: #EE5F4D;
-}
-.langsContDisplayer{
-  opacity: 1;
-  display: block;
-  @include easeTrans(200ms);
-}
-
-.engLangSelector, .faLangSelector{
-  @include advancedFlex(column-reverse,center,center);
-  @include advancedPosition(null,100%,50%);
-  //padding: 6px 12px 6px 8px;
-  //margin-bottom: 8px;
-  background-color: $accentColor;
-  border-radius: 0 0 5px 5px;
-  padding: 10px 12px;
-  cursor: pointer;
-  @include easeTrans(200ms);
-  &:hover{
-    background-color: #ffffff;
-    color: $accentColor;
-  }
-  & img{
-    margin-top:5px;
-  }
-}
-
-
-.faLangSelector{
-  border-bottom: solid #ffffff 1px;
-  border-radius: 5px 5px 0 0;
-  font-family: $secondFaFont;
-}
-
-.selectedLangFa{
-  font-family: $secondFaFont;
-}
-
-.bluring { filter: blur(5px); @include easeTrans(400ms);}
-.menuLefter { left: 0; }
+@include langSelectorMobile;
 
 aside{
   @include advancedPosition(null,100%,40%);
@@ -303,34 +129,23 @@ aside{
   @include easeTrans(500ms);
 }
 
-.motionTitle{
-  letter-spacing: 2px;
-}
+.motionTitle{letter-spacing: 2px;}
 
 .webTitle{letter-spacing: 6px}
 
-.bottomSquare:hover .webTitle{
+.bottomSquare:hover .webTitle, .topSquare:hover .motionTitle{
   letter-spacing: 10px;
   margin-bottom: 15px;
 }
 
-.topSquare:hover .motionTitle{
-  letter-spacing: 10px;
-  margin-bottom: 15px;
-}
-
-.developerTitle, .designerTitle{
-  font-weight: 200;
-}
+.developerTitle, .designerTitle{font-weight: 200;}
 
 .motionTitleFa, .webTitleFa {
   font-family: $mainFaFont;
   font-size: 1.75rem;
 }
 
-.webTitleFa {
-  font-size: 2rem;
-}
+.webTitleFa {font-size: 2rem;}
 
 .designerTitleFa, .developerTitleFa{
   font-family: $mainFaFont;
@@ -351,11 +166,6 @@ main{
   /*background-color: aqua;*/
 }
 
-.imTitle{
-  display: none;
-  opacity: 0;
-}
-
 .fullName{
   @include advancedPosition(relative,85%,70%);
   @include advancedFlex(row,center,center);
@@ -365,8 +175,6 @@ main{
   /*background-color: red;*/
   background-image: url("../imgs/nameBgMyRect.svg");
   background-repeat: no-repeat;
-  /*background-position: bottom left;*/
-  /*background-size: calc(120px + 70%);*/
   background-position: center;
   background-size: 100% 100%;
   filter: drop-shadow(5px 5px #ffffff);
@@ -401,15 +209,8 @@ main{
   100%{transform: rotateZ(.5deg);}
 }
 
-.bigScreenBio{
-  display: none;
-  opacity: 0;
-}
-
 .shortBio{
   @include advancedPosition(null,null,45%);
-  /*padding-left: 24%;*/
-  /*padding-top: 1.5rem;*/
   @include advancedFlex(column,center,center);
   /*background-color: blueviolet;*/
   & p{
@@ -428,7 +229,6 @@ main{
     display: flex;
     flex-flow: column;
     align-items: flex-end;
-    //padding-right: 15vw;
 }
 
 .boldRedText{
@@ -447,13 +247,6 @@ main{
   /*background-color: rebeccapurple;*/
 }
 
-.socialWhiteSpace, .socialsText{
-  display: none;
-  opacity: 0;
-  /*background-color: #ffffff;*/
-}
-
-
 .socialIconsCont{
   @include advancedPosition(null,80%,100%);
   @include advancedFlex(row,space-evenly,center);
@@ -461,13 +254,10 @@ main{
 }
 
 .socialwrapper{
-  /*width: 3rem;*/
-  /*height: 3rem;*/
   @include advancedPosition(null,10vw,10vw);
   border-radius: 40%;
   background-color: #414345;
   box-shadow:1px 1px 1px $accentColor ;
-  /*box-shadow:4px 6px 5px rgba(0, 0, 0, .1) ;*/
   @include easeTrans(500ms);
   &:hover{
     box-shadow:0 0 5px rgba(0, 0, 0, .1) ;
@@ -559,11 +349,6 @@ footer{
   & img{
     @include advancedPosition(null,50px,null);
   }
-}
-
-.logoToolTip{
-  display: none;
-  opacity: 0;
 }
 
 .logoSubText{

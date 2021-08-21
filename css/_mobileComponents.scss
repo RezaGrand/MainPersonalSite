@@ -1,0 +1,209 @@
+@mixin hamberMixin {
+  .hamberBtnCont{
+    @include advancedPosition(absolute,3rem,3rem);
+    @include advancedFlex(column,space-between,center);
+    padding: 12px 0;
+    top:1rem;
+    left:1rem;
+    cursor:pointer;
+    border-radius: 30%;
+    background-color: #414345;
+    z-index: 98;
+    @include easeTrans(200ms);
+    overflow: hidden;
+  }
+
+  .hamberLine{
+    width:65%;
+    height: 4px;
+    background-color: white;
+    border-radius: 2px;
+    @include easeTrans(200ms);
+    transform-origin: 0 0;
+  }
+
+  .hamberMiddleLineAni{
+    transform: translateX(3rem);
+    background-color: $accentColor;
+  }
+  .hamberTopLineAni{
+    transform: translateX(.45rem) rotateZ(45deg) ;
+    background-color: $accentColor;
+  }
+  .hamberBottomLineAni{
+    transform:translateX(.25rem) translateY(.1rem)  rotateZ(-45deg) ;
+    background-color: $accentColor;
+  }
+}
+
+@mixin topMenuMobile{
+  .topMenu{
+    @include advancedPosition(absolute,50%,100vh);
+    @include advancedFlex(column,null,center);
+    top:0;
+    left:-100%;
+    padding-top: 5rem;
+    opacity: .99;
+    z-index: 90;
+    @include easeTrans(300ms);
+    transition-timing-function: ease-in-out;
+    box-shadow: 10px 0 100px #000000;
+    background-color: #313334;
+  }
+
+  .topMenuBtnCont{
+    display: inline-block;
+    @include advancedPosition(null,100%,10%);
+
+    margin-bottom: 1rem;
+    transform: translateX(-100%);
+    //background-color: coral;
+  }
+
+  .topMenuBtnContPush{
+    @include easeTrans(300ms);
+    transform: translateX(0px);
+  }
+
+  .homeBtnCont{transition-delay: 0ms;transition-timing-function: ease-out}
+  .resumeBtnCont{transition-delay: 100ms;transition-timing-function: ease-out}
+  .artworksBtnCont{transition-delay: 200ms;transition-timing-function: ease-out}
+  .blogBtnCont {transition-delay: 300ms;transition-timing-function: ease-out}
+  .hireBtnCont {transition-delay: 400ms;transition-timing-function: ease-out}
+  .downloadBtnCont{transition-delay: 500ms;transition-timing-function: ease-out}
+
+  .homeBtnCont{
+    pointer-events: none;
+    cursor: default;
+    color: $accentColor;
+  }
+
+  .menuBtn{
+    font-size: 1.2rem;
+    @include advancedPosition(relative,100%,100%);
+    @include advancedFlex(row,center,center);
+    overflow: hidden;
+    @include easeTrans(150ms);
+    /*background-color: yellow;*/
+    &::after, &::before{
+      @include advancedPosition(absolute,100%,4px);
+      bottom: 0;
+      left: -100%;
+      content: "";
+      border-radius: 10px;
+      background-color: $accentColor;
+      @include easeTrans(150ms);
+    }
+    &::before{
+      left: -120%;
+      background-color: yellow;
+    }
+    &:hover{
+      color: $accentColor;
+    }
+    &:hover::after, &:hover::before{
+      left: 100%;
+      transition-duration: 400ms;
+    }
+    &:hover::before{
+      transition-delay: 130ms;
+    }
+  }
+
+  .menuBtnFa{
+    font-family: $secondFaFont;
+  }
+
+  .downloadBtnCont{
+    @include advancedFlex(row,center,center);
+  }
+  .downloadBtn{
+    @include advancedPosition(null,80%,80%);
+    padding: 0 15px;
+    background-color: $accentColor;
+    border-radius: 1rem;
+    @include easeTrans(300ms);
+    &:hover{
+      background-color: #ffffff;
+      color: $accentColor;
+    }
+    &::after, &::before{display: none;}
+  }
+}
+
+@mixin langSelectorMobile{
+  .langMotherCont{
+    @include advancedPosition(absolute,3rem,3rem);
+    @include advancedFlex(row,center,center);
+    min-height: 5rem;
+    top:0;
+    left:5rem;
+    z-index: 98;
+    font-weight: 700;
+    font-size: 1rem;
+    //background-color: #fdf497;
+  }
+
+  .selectedLang{
+    @include advancedPosition(null,3rem,3rem);
+    @include advancedFlex(column-reverse,space-between,center);
+    padding: 4px;
+    color: #ffffff;
+    border: $accentColor solid 1.5px;
+    cursor: pointer;
+    border-radius: 30%;
+    background-color: $accentColor;
+    @include easeTrans(200ms);
+    &:hover{
+      background-color: #ffffff;
+      color: $accentColor;
+    }
+    &:hover .langArrow{
+      transform: rotateZ(90deg);
+      color:#ffffff;
+    }
+  }
+
+  .langsCont{
+    @include advancedPosition(absolute,100%,6rem);
+    top:80%;
+    padding-top: 8px;
+    display: none;
+    opacity: 0;
+    //background-color: #EE5F4D;
+  }
+  .langsContDisplayer{
+    opacity: 1;
+    display: block;
+    @include easeTrans(200ms);
+  }
+
+  .engLangSelector, .faLangSelector{
+    @include advancedFlex(column-reverse,center,center);
+    @include advancedPosition(null,100%,50%);
+    background-color: $accentColor;
+    border-radius: 0 0 5px 5px;
+    padding: 10px 12px;
+    cursor: pointer;
+    @include easeTrans(200ms);
+    &:hover{
+      background-color: #ffffff;
+      color: $accentColor;
+    }
+    & img{margin-top:5px;}
+  }
+
+
+  .faLangSelector{
+    border-bottom: solid #ffffff 1px;
+    border-radius: 5px 5px 0 0;
+    font-family: $secondFaFont;
+  }
+
+  .selectedLangFa{
+    font-family: $secondFaFont;
+  }
+
+  .bluring { filter: blur(5px); @include easeTrans(400ms);}
+  .menuLefter { left: 0; }
+}
