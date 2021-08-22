@@ -46,7 +46,7 @@
 @keyframes slideOut {
   to {
     top: -100%; } }
-.socialWhiteSpace, .socialsText, .imTitle, .bigScreenBio, .logoToolTip, .langArrow {
+.socialWhiteSpace, .socialsText, .imTitle, .bigScreenBio, .logoToolTip {
   display: none;
   opacity: 0; }
 
@@ -171,11 +171,6 @@ body {
   transition-delay: 500ms;
   transition-timing-function: ease-out; }
 
-.homeBtnCont {
-  pointer-events: none;
-  cursor: default;
-  color: #00D193; }
-
 .menuBtn {
   font-size: 1.2rem;
   position: relative;
@@ -239,6 +234,11 @@ body {
   .downloadBtn::after, .downloadBtn::before {
     display: none; }
 
+.homeBtnCont {
+  pointer-events: none;
+  cursor: default;
+  color: #00D193; }
+
 .langMotherCont {
   position: absolute;
   width: 3rem;
@@ -275,9 +275,10 @@ body {
   .selectedLang:hover {
     background-color: #ffffff;
     color: #00D193; }
-  .selectedLang:hover .langArrow {
-    transform: rotateZ(90deg);
-    color: #ffffff; }
+
+.langArrow {
+  display: none;
+  opacity: 0; }
 
 .langsCont {
   position: absolute;

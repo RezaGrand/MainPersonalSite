@@ -128,7 +128,7 @@ aside {
   left: 6rem;
   bottom: -4rem;
   z-index: 10;
-  filter: drop-shadow(3px 3px 5px #000000);
+  filter: drop-shadow(15px 15px 0 #434343);
   transition: all;
   transition-duration: 500ms;
   transition-timing-function: ease-in-out;
@@ -200,11 +200,6 @@ main {
   align-items: center;
   /*background-color: coral;*/ }
 
-.homeBtnCont {
-  pointer-events: none;
-  cursor: default;
-  color: #00D193; }
-
 .menuBtn {
   position: relative;
   width: 100%;
@@ -258,6 +253,11 @@ main {
     color: #00D193; }
   .downloadBtn::after, .downloadBtn::before {
     display: none; }
+
+.homeBtnCont {
+  pointer-events: none;
+  cursor: default;
+  color: #00D193; }
 
 .langMotherCont {
   position: absolute;

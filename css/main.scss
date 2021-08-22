@@ -92,7 +92,8 @@ aside{
   left:6rem;
   bottom:-4rem;
   z-index: 10;
-  filter: drop-shadow(3px 3px 5px #000000);
+  //filter: drop-shadow(3px 3px 5px #000000);
+  filter: drop-shadow(15px 15px 0 #434343);
   @include easeTrans(500ms);
   /*background-color: red;*/
 }
@@ -140,6 +141,12 @@ main{
 }
 
 @include topMenu;
+
+.homeBtnCont{
+  pointer-events: none;
+  cursor: default;
+  color: $accentColor;
+}
 
 @include langSelector;
 

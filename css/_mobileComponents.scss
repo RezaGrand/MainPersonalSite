@@ -72,12 +72,6 @@
   .hireBtnCont {transition-delay: 400ms;transition-timing-function: ease-out}
   .downloadBtnCont{transition-delay: 500ms;transition-timing-function: ease-out}
 
-  .homeBtnCont{
-    pointer-events: none;
-    cursor: default;
-    color: $accentColor;
-  }
-
   .menuBtn{
     font-size: 1.2rem;
     @include advancedPosition(relative,100%,100%);
@@ -158,11 +152,9 @@
       background-color: #ffffff;
       color: $accentColor;
     }
-    &:hover .langArrow{
-      transform: rotateZ(90deg);
-      color:#ffffff;
-    }
   }
+
+  .langArrow{display:none; opacity:0;}
 
   .langsCont{
     @include advancedPosition(absolute,100%,6rem);

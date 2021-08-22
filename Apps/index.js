@@ -8,8 +8,6 @@ const hamberBtn = document.querySelector(".hamberBtnCont");
 const hamberTopLine = document.querySelector(".hamberTopLine");
 const hamberMiddleLine = document.querySelector(".hamberMiddleLine");
 const hamberBottomLine = document.querySelector(".hamberBottomLine");
-
-const topMenuBtnConts = document.querySelectorAll(".topMenuBtnCont");
 // ----------------------------      Lang Selection Variables       -------------------------------
 const selectedLang = document.querySelector(".selectedLang");
 const langsCont = document.querySelector(".langsCont");
@@ -19,6 +17,9 @@ let langUpdater = localStorage.getItem("lang");
 
 const imTitle = document.querySelector(".imTitle h2");
 const bigName = document.querySelector(".fullName h2");
+
+const topMenu = document.querySelector(".topMenu");
+const topMenuBtnConts = document.querySelectorAll(".topMenuBtnCont");
 const menuBtns = document.querySelectorAll(".menuBtn");
 const homeBtn = document.querySelector(".homeBtn");
 const resumeBtn = document.querySelector(".resumeBtn");
@@ -26,7 +27,7 @@ const worksBtn = document.querySelector(".artworksBtn");
 const blogBtn = document.querySelector(".blogBtn");
 const downloadCV = document.querySelector(".downloadBtn");
 const hireBtn = document.querySelector(".hireBtn");
-const topMenu = document.querySelector(".topMenu");
+
 const motionTitle = document.querySelector(".motionTitle");
 const designerTitle = document.querySelector(".designerTitle");
 const webTitle = document.querySelector(".webTitle");
@@ -43,8 +44,6 @@ const socials = document.querySelector(".socials");
 const socialsText = document.querySelector(".socialsText h3");
 const preloadDiv = document.querySelector(".preloadDiv");
 
-let topMenuStyles =  getComputedStyle(topMenu);
-let hamberBtnStyles =  getComputedStyle(hamberBtn);
 // ----------------------------      Preload Animation       -------------------------------
 window.addEventListener("load", ()=>{
     preloadDiv.classList.add("opacityZero");
@@ -83,7 +82,7 @@ function langUpdaterFunc(){
     resumeBtn.textContent = "Resume"
     worksBtn.textContent = "Artworks"
     blogBtn.textContent = "Blog"
-    hireBtn.textContent = "Hire Me"
+    hireBtn.textContent = "Contact Me"
     downloadCV.textContent = "Download CV"
 
     motionTitle.classList.remove("motionTitleFa");

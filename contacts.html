@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Contact Reza Aghmohammadi</title>
+    <title>Contact Me</title>
     <meta name="author" content="Reza Aghamohammadi">
     <meta name="description" content="You can Contact Reza Aghmohammadi and hire a talented web developer and motion designer">
     <meta name="keywords" content="motiongraphics,motiondesign,aftereffects,webdesign,webdevelope,developer,html5,css3,javascript">
     <meta name="twitter:title" content="Reza Aghmohammadi RA2">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <!--     Faveicons       -->
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -19,76 +19,139 @@
     <!--     Google Fonts       -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700;900&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700;900&family=Quicksand:wght@400;600&family=Almarai:wght@300;700&family=Lalezar&display=swap" rel="stylesheet">
     <!--     StyleSheets       -->
     <link rel="stylesheet" href="css/mcleodreset.css">
-    <link rel="stylesheet" href="css/contacts.css" media="(min-width: 751px)">
-    <link rel="stylesheet" href="css/contactsmobile.css" media="(max-width: 750px)">
+    <link rel="stylesheet" href="css/contacts.css" media="(min-width: 841px)">
+    <link rel="stylesheet" href="css/contactsmobile.css" media="(max-width: 840px)">
 </head>
 <body>
+    <div class="preloadDiv">Reza Aghamohammadi Artworks</div>
     <div class="bodyCont">
-        <div class="mobileMenuCont">
-            <div class="menuDismisser"></div>
-            <div class="mobileMenu">
-
-            </div>
             <div class="hamberBtnCont">
-
-            </div>
-            <div class="langContMobile">
-                <a href="#" class="enLangMobile">EN</a>
-                <span>|</span>
-                <a href="#" class="faLangMobile">FA</a>
-            </div>
-        </div> <!--      End of mobileMenu        -->
-        <main>
+                <div class="hamberTopLine hamberLine"></div>
+                <div class="hamberMiddleLine hamberLine"></div>
+                <div class="hamberBottomLine hamberLine"></div>
+            </div><!--    End of hamberCont      -->
             <nav class="topMenu">
-                <a href="#homePage" class="homeBtnCont topMenuBtnCont">
+                <a href="index.html" class="homeBtnCont topMenuBtnCont">
                     <div class="homeBtn menuBtn">
                         Home
                     </div>
                 </a>
-                <a href="#resumePage" class="resumeBtnCont topMenuBtnCont">
+                <a href="resume.html" class="resumeBtnCont topMenuBtnCont">
                     <div class="resumeBtn menuBtn">
                         Resume
                     </div>
                 </a>
-                <a href="#artworksPage" class="artworksBtnCont topMenuBtnCont">
+                <a href="projects.html" class="artworksBtnCont topMenuBtnCont">
                     <div class="artworksBtn menuBtn">
                         Artworks
                     </div>
                 </a>
-                <a href="#blogPage" class="blogBtnCont topMenuBtnCont">
+                <a href="blog.html" class="blogBtnCont topMenuBtnCont">
                     <div class="blogBtn menuBtn">
                         Blog
                     </div>
                 </a>
-                <a href="#hirePage" class="hireBtnCont topMenuBtnCont">
+                <a href="contacts.html" class="hireBtnCont topMenuBtnCont">
                     <div class="hireBtn menuBtn">
-                        Hire Me
+                        Contact Me
                     </div>
                 </a>
-                <a href="#downloadCV" class="downloadBtnCont topMenuBtnCont">
+                <a href="#downloadCV" class="downloadBtnCont topMenuBtnCont" target="_blank">
                     <div class="downloadBtn menuBtn">
                         Download CV
                     </div>
                 </a>
-                <div class="langBtn topMenuBtnCont">
-                    <a href="#" class="engLang">EN&nbsp;</a>
-                    <span>&nbsp;|&nbsp;</span>
-                    <a href="#" class="faLang">&nbsp;FA</a>
-                </div>
             </nav><!--      End of Top Menu       -->
-            <div class="slideShowWrapper">
-                <div class="slidesCont">
-                    <div class="slideTest1 slideGen">1</div>
-                    <div class="slideTest2 slideGen">2</div>
-                    <div class="slideTest3 slideGen">3</div>
+            <div class="langMotherCont">
+                <div class="selectedLang">
+                    <img src="imgs/englandFlag.jpg" alt="English Language" width="25px">
+                    EN
+                    <i class="langArrow">&#8227;</i>
                 </div>
-                <div class="rightMover arrowDivs">R</div>
-                <div class="leftMover arrowDivs">L</div>
+                <div class="langsCont">
+                    <div class="faLangSelector">
+                        <img src="imgs/iranFlag.jpg" alt="Persian Language" width="25px">
+                        فا
+                    </div>
+                    <div class="engLangSelector">
+                        <img src="imgs/englandFlag.jpg" alt="English Language" width="25px">
+                        EN
+                    </div>
+                </div>
+            </div><!--      End of Lang       -->
+        <main class="mainCont">
+            <div class="envelope">
+                <p id="formStatus">Thanks for your submission!</p>
+                <div class="stampCont"></div>
+                <div class="contactText">
+                    <p class="contactTextFirstP">Hi there!</p>
+                    <p class="contactTextSecondP">For all Business inquiries, Projects, Job Offers and Collaborations, You can use the form below. I'll respond asap.
+                    </p>
+                </div><!--  End of contactText     -->
+                <div class="formCont">
+                    <form action="https://formspree.io/f/xpzkokbe" class="mainForm" id="mainForm" method="post">
+                        <label for="senderName" class="senderNameLabel labelGen">Name:</label>
+                        <input type="text" name="name" id="senderName" class="inputGen" required autofocus>
+
+                        <label for="senderPhone" class="senderPhoneLabel labelGen">Phone:</label>
+                        <input type="tel" name="phone" id="senderPhone" placeholder="09123344555" pattern="^[0-9]*$" class="inputGen">
+
+                        <label for="senderEmail" class="senderEmailLabel labelGen">Email:</label>
+                        <input type="email" name="email" placeholder="aaaa@aaa.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" id="senderEmail" class="inputGen" required oninvalid="this.setCustomValidity('Not a valid email address')"
+                               oninput="this.setCustomValidity('')">
+
+                        <label for="senderSubject" class="senderSubject labelGen">Subject:</label>
+                        <div class="selectCont">
+                            <select name="subjects" id="senderSubject" class="inputGen">
+                                <option value="workProjects" class="optionOne">Work and Projects</option>
+                                <option value="question" class="optionTwo">Question or Suggestions</option>
+                                <option value="other" class="optionThree">Other Subjects</option>
+                            </select>
+                        </div>
+
+                        <label for="senderMessage" class="senderMessageLabel labelGen">Message:</label>
+                        <textarea id="senderMessage" placeholder="Please write your message here" name="senderMessage" class="inputGen" required></textarea>
+
+                        <input type="reset" value="Clear All" id="resetBtn" class="btnGen">
+                        <input type="submit" value="Send" id="submitBtn" class="btnGen">
+                    </form>
+                </div><!--     End of Form      -->
+            </div><!--      End of envelope        -->
+            <div class="socialsCont">
+                <div class="socialIconsCont">
+                    <a href="https://www.linkedin.com/in/rezaaghamohammadi/" target="_blank" class="linkedinWrapper socialwrapper">
+                        <div class="linkedinIcon socialIcon"></div>
+                    </a>
+                    <a href="https://github.com/RezaGrand" target="_blank" class="githubWrapper socialwrapper">
+                        <div class="githubIcon socialIcon"></div>
+                    </a>
+                    <a href="https://t.me/RA2motion" target="_blank" class="telegramWrapper socialwrapper">
+                        <div class="telegramIcon socialIcon"></div>
+                    </a>
+                    <a href="https://www.instagram.com/ra2motion" target="_blank" class="instagramWrapper socialwrapper">
+                        <div class="instagramIcon socialIcon">
+                            <div class="instagramGradiant"></div>
+                        </div>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCtMqsLXUojQe8AxZbM3F2JA" target="_blank" class="youtubeWrapper socialwrapper">
+                        <div class="youtubeIcon socialIcon"></div>
+                    </a>
+                    <a href="mailto:reza55_55@yahoo.com&subject=Mail from Website Visitors&body=Hello Dear Reza" class="yahooWrapper socialwrapper">
+                        <div class="yahooIcon socialIcon"></div>
+                    </a>
+                </div>
+            </div><!--    End of socialsCont    -->
+        </main> <!--     End of main       -->
+        <footer id="footer">
+            <div class="logoCont">
+                <div class="logoToolTip"><p>Reza Aghamohammadi Artworks</p></div>
+                <img src="imgs/RA2LogoDark350px.svg" width="50px" alt="Reza Aghamohammadi Artworks RA2">
+                <p class="logoSubText">Design</p>
             </div>
-        </main> <!--      End of main        -->
+        </footer><!--      End of Footer        -->
     </div>   <!--      End of bodyCont        -->
 <script type="text/javascript" src="Apps/contacts.js"></script>
 </body>

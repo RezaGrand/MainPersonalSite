@@ -22,11 +22,6 @@
     /*background-color: coral;*/
   }
 
-  .homeBtnCont{
-    pointer-events: none;
-    cursor: default;
-    color: $accentColor;
-  }
 
   .menuBtn{
     @include advancedPosition(relative,100%,50%);

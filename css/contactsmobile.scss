@@ -1,36 +1,400 @@
 /*    ---  Content Tables
-    ---  1.BodyStyles             ---
-    ---  2.BackGrounds            ---
-    ---  3.MainPart               ---
-    ---   3.1.Hero                ---
-    ---    3.1.1.WebDev           ---
-    ---     3.1.1.1.LeftArrows    ---
-    ---    3.1.2.HeroPic          ---
-    ---    3.1.3.MotionDes        ---
-    ---     3.1.3.1.RightArrows   ---
-    ---  4.MyName                 ---
-    ---    4.1.ImTitle            ---
-    ---    4.2.FullName           ---
-    ---  5.ShortBio               ---
-    ---  6.Nav                    ---
-    ---    6.1.RA2Logo            ---
-    ---     6.1.1.LogoToolTip     ---
-    ---    6.2.MenuButtons        ---
-    ---    6.3.LangSelector       ---   */
+    ---    1.imports & PreloadAni             ---
+    ---    2.Body                             ---
+    ---    3.Aside                            ---
+    ---     3.1.TopSquare                     ---
+    ---     3.2.MidSquare & HeroPic           ---
+    ---     3.3.BottomSquare                  ---
+    ---    4.Main                             ---
+    ---      4.1.TopMenu & LangSelector       ---
+    ---      4.2.FullName                     ---
+    ---    5.NameConts                        ---
+    ---    6.ShortBio                         ---
+    ---    7.Socials                          ---
+    ---    8.Logo & Logo ToolTip              ---
+    ---    9.MediaQueries                     --- */
 
 @import "configs";
+@import "mobileComponents";
 
-
+@include preloadeAnimation;
 
 body{
   @include advancedPosition(null,null,100vh);
-  min-height: 750px;
+  min-height: 780px;
   background: #232526;  /* fallback for old browsers */
   /* Chrome 10-25, Safari 5.1-6 */
   background: -webkit-linear-gradient(to left, #414345, #232526);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background: linear-gradient(to left, #414345, #232526);
-  overflow: hidden;
+  overflow-x: hidden;
   font-family: $mainFont;
   color: #ffffff;
+}
+
+.bodyCont{
+  @include advancedPosition(relative,100%,100%);
+  @include advancedFlex(column,null,null);
+  padding-top: 2rem;
+  overflow: hidden;
+  //background-color: coral;
+}
+
+@include hamberMixin;
+@include topMenuMobile;
+@include langSelectorMobile;
+
+.hireBtnCont{
+  pointer-events: none;
+  cursor: default;
+  color: $accentColor;
+}
+
+.mainCont{
+  @include advancedPosition(null,90%,85%);
+  @include advancedFlex(column,null,center);
+  justify-self: center;
+  align-self: center;
+  margin: 3rem 0 0 0;
+  background-color: #ffffff;
+  border-radius: 20px;
+}
+
+.envelope{
+  @include advancedPosition(relative,100%,92%);
+  @include advancedFlex(column,center,center);
+  //box-shadow: 0 20px 0 $accentColor;
+  background-color: #ffffff;
+  border-radius: 20px;
+}
+
+.stampCont{
+  @include advancedPosition(absolute,8rem,8rem);
+  top:6rem;
+  left:1rem;
+  background-image: url("../imgs/stampAzadi.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+  filter: drop-shadow(0 0 0 #434343);
+  z-index: 6;
+  transform: rotateZ(-5deg);
+}
+
+.contactText{
+  @include advancedPosition(null,100%,40%);
+  @include advancedFlex(column,center,flex-start);
+  padding: 0 1rem 0 8rem;
+  font-size: clamp(.5rem,.8rem,.8rem);
+  box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
+  //background-color: $accentColor;
+  color: #414345;
+  z-index: 5;
+}
+
+.contactTextFa{
+  @include advancedFlex(column,center,flex-end);
+}
+
+.contactTextFirstP{
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.contactTextFirstPFa{
+  text-align: right;
+  font-family: $secondFaFont;
+}
+
+.contactTextSecondP{
+  line-height: 2rem;
+}
+
+.contactTextSecondPFa{
+  text-align: right;
+  font-family: $secondFaFont;
+}
+
+.formCont{
+  @include advancedPosition(null,100%,60%);
+  @include advancedFlex(row,center,center);
+  //background-color: red;
+  color: #434343;
+  border-radius: 5px 5px 0 0;
+  //padding-left: 1rem;
+  //padding-top: 1rem;
+  //padding-bottom: 1rem;
+}
+
+.mainForm{
+  @include advancedPosition(null,90%,90%);
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  //background-color: #d6249f;
+  align-items: start;
+  grid-gap: 1rem;
+  gap:  1rem;
+}
+
+.inputGen{
+  display:block;
+  @include advancedPosition(null,null,1.7rem);
+  grid-column: 2/12;
+  border: #434343 solid 1px;
+  border-radius: 5px;
+  padding-left: .5rem;
+  font-size: .9rem;
+  //min-width: 15rem;
+  &:hover, &:focus{
+    border: $accentColor solid 1px;
+  }
+  //background-color: #430297;
+}
+
+.labelGen{
+  display:block;
+  grid-column: 1/2;
+  @include advancedPosition(null,null,1.7rem);
+  @include advancedFlex(row,flex-start,center);
+  //background-color: aqua;
+}
+
+.labelGenFa{
+  font-family: $secondFaFont;
+}
+
+.selectCont{
+  @include advancedPosition(relative,null,1.7rem);
+  grid-column: 2/12;
+  //min-width: 15rem;
+  &::after{
+    content:"\2023";
+    @include advancedPosition(absolute,1.7rem,1.7rem);
+    @include advancedFlex(row,center,center);
+    background-color: $accentColor;
+    top:0;
+    right:0;
+    pointer-events: none;
+    font-size: 2rem;
+    border-radius: 5px 5px 0 0;
+    transform: rotateZ(90deg);
+    color: #ffffff;
+  }
+}
+
+.selectCont:hover::after{
+  transform: rotateZ(0deg);
+  border-radius: 0 5px 5px 0;
+}
+
+#senderSubject{
+  @include advancedPosition(null,100%,100%);
+  font-size: .9rem;
+  cursor: pointer;
+  //background-color: #EE5F4D;
+}
+#senderSubject option{font-size: .9rem;}
+
+#senderMessage{
+  resize: none;
+  @include advancedPosition(null,null,6rem);
+  padding: .5rem;
+  grid-column: 2/12;
+}
+
+.btnGen{
+  cursor: pointer;
+  @include advancedPosition(null,null,2rem);
+  //min-width: 8rem;
+  @include easeTrans(300ms);
+  display: block;
+  //border: #434343 solid 1px;
+  border-radius: 5px;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: .7rem;
+}
+
+#submitBtn{
+  grid-column: 4/7;
+  background-color: $accentColor;
+  @media (max-width: 1400px) {
+    grid-column: 5/10;
+  }
+  @media (max-width: 1000px) {
+    grid-column: 6/12;
+  }
+}
+
+#resetBtn{
+  grid-column: 2/4;
+  background-color: #EE5F4D;
+  @media (max-width: 1400px) {
+    grid-column: 2/5;
+  }
+  @media (max-width: 1000px) {
+    grid-column: 2/6;
+  }
+}
+
+#resetBtn:hover, #submitBtn:hover{
+  color: #434343;
+  background-color: #ffffff;
+  border: #434343 solid 1px;
+}
+
+#formStatus{
+  @include advancedPosition(absolute,100%,100%);
+  @include advancedFlex(row,center,center);
+  font-size: clamp(1rem,3rem,4rem);
+  font-weight: 700;
+  padding: 0 2rem;
+  line-height: 4rem;
+  top:0;
+  left:0;
+  z-index: 98;
+  //background-color: #fdf497;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.formStatusRevealer{
+  opacity: 1;
+  animation-name: formStatusHider;
+  animation-duration: 3500ms;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes formStatusHider {
+  0%{opacity: 1;}
+  25%{opacity: 1;}
+  50%{opacity: 1;}
+  100%{opacity: 0;}
+}
+
+.socialsCont{
+  @include advancedPosition(null,100%,8%);
+  @include advancedFlex(row,center,center);
+  background-color: $accentColor;
+  border-radius:0 0 20px 20px;
+}
+
+.socialIconsCont{
+  @include advancedPosition(null,100%,100%);
+  @include advancedFlex(row,space-evenly,center);
+  padding: 4rem 0;
+  /*background-color: yellow;*/
+}
+
+.socialwrapper{
+  @include advancedPosition(null,2rem,2rem);
+  border-radius: 40%;
+  background-color: #414345;
+  @include easeTrans(500ms);
+  &:hover{
+    transform: rotateZ(180deg);
+  }
+}
+
+.socialIcon{
+  @include advancedPosition(null,2rem,2rem);
+  border-radius: 40%;
+  /*background-color: #414345;*/
+  background-size: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: saturate(0%);
+  @include easeTrans(500ms);
+  &:hover{
+    background-size: 60%;
+    filter: saturate(100%);
+    transform: rotateZ(180deg);
+  }
+}
+
+.linkedinIcon{
+  background-image: url("../imgs/linkedinicon.svg");
+  &:hover{
+    background-color:  #0072b1;
+  }
+}
+
+.githubIcon{
+  background-image: url("../imgs/githubicon.svg");
+  &:hover{
+    background-color: #171515;
+  }
+}
+
+.telegramIcon{
+  background-image: url("../imgs/telegram.png");
+  /*background-size: 60%;*/
+  &:hover{
+    background-color: #0088CC;
+  }
+}
+
+.instagramIcon{
+  background-image: url("../imgs/instagramicon.svg");
+  background-size: 60%;
+  &:hover .instagramGradiant{
+    opacity: 1;
+  }
+}
+
+.instagramGradiant{
+  @include advancedPosition(null,100%,100%);
+  border-radius: 40%;
+  background:
+          center center/70% no-repeat
+          url("../imgs/instagramicon.svg"),
+          center/cover no-repeat
+          radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  opacity: 0;
+  @include easeTrans(500ms);
+}
+
+.youtubeIcon{
+  background-image: url("../imgs/youtubeicon.svg");
+  &:hover{
+    background-color: #FF0000;
+  }
+}
+
+.yahooIcon{
+  background-image: url("../imgs/yahooicon.svg");
+  &:hover{
+    background-color: #430297;
+  }
+}
+
+footer{
+  @include advancedPosition(absolute,null,7%);
+  bottom: 0;
+  right: 0;
+  padding-right: 20px;
+  @include advancedFlex(column,center,flex-end);
+  //background-color: olivedrab;
+}
+
+.logoCont{
+  @include advancedPosition(relative,null,100%);
+  @include advancedFlex(column,center,center);
+  /*background-color: #EE5F4D;*/
+}
+
+.logoToolTip{display: none;opacity: 0;}
+
+.logoSubText{
+  @include advancedPosition(relative,null,null);
+  padding-left: 8px;
+  font-size: 10px;
+  /*background-color: blue;*/
+  &::after{
+    @include advancedPosition(absolute,50px,5px);
+    content: "";
+    right: -55px;
+    bottom: 3px;
+    background-color: $accentColor;
+  }
 }
