@@ -12,6 +12,31 @@
     ---    6.ShortBio                         ---
     ---    7.Socials                          ---
     ---    8.Logo & Logo ToolTip              ---*/
+@font-face {
+  font-family: 'shabnamregular';
+  src: url("../fonts/Shabnam.woff2") format("woff2"), url("../fonts/Shabnam.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'shabnambold';
+  src: url("../fonts/Shabnam-Bold.woff2") format("woff2"), url("../fonts/Shabnam-Bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'shabnamlight';
+  src: url("../fonts/Shabnam-Light.woff2") format("woff2"), url("../fonts/Shabnam-Light.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'shabnammedium';
+  src: url("../fonts/Shabnam-Medium.woff2") format("woff2"), url("../fonts/Shabnam-Medium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'shabnamthin';
+  src: url("../fonts/Shabnam-Thin.woff2") format("woff2"), url("../fonts/Shabnam-Thin.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
 /*    ---    Variables       ---   */
 /*    ---    Mixins       ---   */
 .preloadDiv {
@@ -95,7 +120,12 @@ body {
 .hamberLine {
   width: 65%;
   height: 4px;
-  background-color: white;
+  background: #00C9FF;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #92FE9D, #00C9FF);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #92FE9D, #00C9FF);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   border-radius: 2px;
   transition: all;
   transition-duration: 200ms;

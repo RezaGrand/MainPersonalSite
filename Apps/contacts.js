@@ -10,6 +10,7 @@ const faLangSelector = document.querySelector(".faLangSelector");
 const enLangSelector = document.querySelector(".engLangSelector");
 let langUpdater = localStorage.getItem("lang");
 
+const senderName = document.getElementById("senderName");
 const senderNameLabel = document.querySelector(".senderNameLabel");
 const senderPhoneLabel = document.querySelector(".senderPhoneLabel");
 const senderEmailLabel = document.querySelector(".senderEmailLabel");
@@ -161,6 +162,7 @@ faLangSelector.addEventListener("click", function (e){
     langUpdaterFunc();
     langsCont.classList.toggle("langsContDisplayer");
     e.stopPropagation();
+    senderName.focus();
 })
 
 enLangSelector.addEventListener("click", function (e){
@@ -169,6 +171,7 @@ enLangSelector.addEventListener("click", function (e){
     langUpdaterFunc();
     langsCont.classList.toggle("langsContDisplayer");
     e.stopPropagation();
+    senderName.focus();
 })
 
 // -----------------------------      Mobile Menu       ----------------------------------------
@@ -233,4 +236,8 @@ async function handleSubmit(event) {
     });
 }
 
-form.addEventListener("submit", handleSubmit)
+form.addEventListener("submit", handleSubmit);
+
+form.addEventListener("reset", ()=>{
+    senderName.focus();
+});

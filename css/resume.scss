@@ -1,0 +1,219 @@
+/*    ---  Content Tables
+    ---    1.imports & PreloadAni             ---
+    ---    2.Body                             ---
+    ---    3.Aside                            ---
+    ---     3.1.TopSquare                     ---
+    ---     3.2.MidSquare & HeroPic           ---
+    ---     3.3.BottomSquare                  ---
+    ---    4.Main                             ---
+    ---      4.1.TopMenu & LangSelector       ---
+    ---      4.2.FullName                     ---
+    ---    5.NameConts                        ---
+    ---    6.ShortBio                         ---
+    ---    7.Socials                          ---
+    ---    8.Logo & Logo ToolTip              ---
+    ---    9.MediaQueries                     --- */
+
+@import "configs";
+@import "components";
+
+@include preloadeAnimation;
+
+.hamberBtnCont{display: none;opacity: 0;}
+
+body{
+  @include advancedPosition(null,null,100vh);
+  min-height: 850px;
+  background: #232526;  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to left, #414345, #232526);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to left, #414345, #232526);
+  overflow: hidden;
+  font-family: $mainFont;
+  color: #ffffff;
+}
+
+.bodyCont{
+  @include advancedPosition(relative,100%,100%);
+  @include advancedFlex(column,null,null);
+  //background-color: coral;
+}
+
+@include topMenu;
+
+//.topMenu{
+//  @media (max-width: 1100px) {
+//    padding-right: 8rem;
+//  }
+//}
+
+.resumeBtnCont{
+  pointer-events: none;
+  cursor: default;
+  color: $accentColor;
+}
+
+@include langSelector;
+
+.mainCont{
+  @include advancedPosition(null,70%,70%);
+  @include advancedFlex(row,null,center);
+  justify-self: center;
+  align-self: center;
+  margin: 3rem 0 0 0;
+  background-color: #ffffff;
+  border-radius: 20px;
+}
+
+
+.socialsCont{
+  @include advancedPosition(null,10%,100%);
+  @include advancedFlex(column,center,center);
+  background-color: $accentColor;
+  border-radius:0 20px 20px 0;
+}
+
+.socialIconsCont{
+  @include advancedPosition(null,100%,100%);
+  @include advancedFlex(column,space-evenly,center);
+  padding: 4rem 0;
+  /*background-color: yellow;*/
+}
+
+.socialwrapper{
+  @include advancedPosition(null,3rem,3rem);
+  border-radius: 40%;
+  background-color: #414345;
+  @include easeTrans(500ms);
+  &:hover{
+    transform: rotateZ(180deg);
+  }
+}
+
+.socialIcon{
+  @include advancedPosition(null,3rem,3rem);
+  border-radius: 40%;
+  /*background-color: #414345;*/
+  background-size: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: saturate(0%);
+  @include easeTrans(500ms);
+  &:hover{
+    background-size: 60%;
+    filter: saturate(100%);
+    transform: rotateZ(180deg);
+  }
+}
+
+.linkedinIcon{
+  background-image: url("../imgs/linkedinicon.svg");
+  &:hover{
+    background-color:  #0072b1;
+  }
+}
+
+.githubIcon{
+  background-image: url("../imgs/githubicon.svg");
+  &:hover{
+    background-color: #171515;
+  }
+}
+
+.telegramIcon{
+  background-image: url("../imgs/telegram.png");
+  /*background-size: 60%;*/
+  &:hover{
+    background-color: #0088CC;
+  }
+}
+
+.instagramIcon{
+  background-image: url("../imgs/instagramicon.svg");
+  background-size: 60%;
+  &:hover .instagramGradiant{
+    opacity: 1;
+  }
+}
+
+.instagramGradiant{
+  @include advancedPosition(null,100%,100%);
+  border-radius: 40%;
+  background:
+          center center/70% no-repeat
+          url("../imgs/instagramicon.svg"),
+          center/cover no-repeat
+          radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  opacity: 0;
+  @include easeTrans(500ms);
+}
+
+.youtubeIcon{
+  background-image: url("../imgs/youtubeicon.svg");
+  &:hover{
+    background-color: #FF0000;
+  }
+}
+
+.yahooIcon{
+  background-image: url("../imgs/yahooicon.svg");
+  &:hover{
+    background-color: #430297;
+  }
+}
+
+footer{
+  @include advancedPosition(absolute,null,10%);
+  bottom: 0;
+  right: 0;
+  padding-right: 20px;
+  @include advancedFlex(column,center,flex-end);
+  //background-color: olivedrab;
+}
+
+.logoCont{
+  @include advancedPosition(relative,null,100%);
+  @include advancedFlex(column,center,center);
+  /*background-color: #EE5F4D;*/
+  &:hover .logoToolTip{
+    bottom: 1rem;
+  }
+}
+
+.logoToolTip{
+  @include advancedPosition(absolute,18rem,2.5rem);
+  left: -18.5rem;
+  bottom: -10rem;
+  @include advancedFlex(column,center,center);
+  border-radius: .5rem;
+  color: #ffffff;
+  background-color: #313334;
+  @include easeTrans(300ms);
+  &::after{
+    @include advancedPosition(absolute,2rem,2rem);
+    box-sizing: border-box;
+    content: "";
+    right: -1.5rem;
+    bottom: .25rem;
+    border-right: 1rem solid transparent;
+    border-bottom: 1rem solid transparent;
+    border-top: 1rem solid transparent;
+    border-left: 1rem solid #313334;
+    /*background-color: $coolGreen;*/
+  }
+}
+
+.logoSubText{
+  @include advancedPosition(relative,null,null);
+  padding-left: 8px;
+  font-size: 15px;
+  /*background-color: blue;*/
+  &::after{
+    @include advancedPosition(absolute,50px,5px);
+    content: "";
+    right: -55px;
+    bottom: 4px;
+    background-color: $accentColor;
+  }
+}

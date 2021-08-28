@@ -1,18 +1,39 @@
 /*    ---  Content Tables
-    ---    1.imports & PreloadAni             ---
-    ---    2.Body                             ---
-    ---    3.Aside                            ---
-    ---     3.1.TopSquare                     ---
-    ---     3.2.MidSquare & HeroPic           ---
-    ---     3.3.BottomSquare                  ---
-    ---    4.Main                             ---
-    ---      4.1.TopMenu & LangSelector       ---
-    ---      4.2.FullName                     ---
-    ---    5.NameConts                        ---
-    ---    6.ShortBio                         ---
-    ---    7.Socials                          ---
-    ---    8.Logo & Logo ToolTip              ---
-    ---    9.MediaQueries                     --- */
+    ---    1.imports & PreloadAni      ---
+    ---    2.Top Menu                  ---
+    ---    3.MainCont                  ---
+    ---     3.1.Envelope               ---
+    ---     3.2.StampCont              ---
+    ---     3.3.ContactText            ---
+    ---     3.4.MainForm               ---
+    ---    4.Socials                   ---
+    ---    5.Footer                    ---
+    ---     5.1.Logo & Logo ToolTip    --- */
+@font-face {
+  font-family: 'shabnamregular';
+  src: url("../fonts/Shabnam.woff2") format("woff2"), url("../fonts/Shabnam.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'shabnambold';
+  src: url("../fonts/Shabnam-Bold.woff2") format("woff2"), url("../fonts/Shabnam-Bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'shabnamlight';
+  src: url("../fonts/Shabnam-Light.woff2") format("woff2"), url("../fonts/Shabnam-Light.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'shabnammedium';
+  src: url("../fonts/Shabnam-Medium.woff2") format("woff2"), url("../fonts/Shabnam-Medium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'shabnamthin';
+  src: url("../fonts/Shabnam-Thin.woff2") format("woff2"), url("../fonts/Shabnam-Thin.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
 /*    ---    Variables       ---   */
 /*    ---    Mixins       ---   */
 .preloadDiv {
@@ -178,7 +199,8 @@ body {
   right: 2rem;
   z-index: 98;
   font-weight: 700;
-  font-size: 1rem; }
+  font-size: 1rem;
+  user-select: none; }
 
 .selectedLang {
   width: 100%;

@@ -16,7 +16,14 @@
   .hamberLine{
     width:65%;
     height: 4px;
-    background-color: white;
+    //background-color: white;
+    //background: #007991;  /* fallback for old browsers */
+    //background: -webkit-linear-gradient(to right, #78ffd6, #007991);  /* Chrome 10-25, Safari 5.1-6 */
+    //background: linear-gradient(to right, #78ffd6, #007991); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #00C9FF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #92FE9D, #00C9FF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #92FE9D, #00C9FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     border-radius: 2px;
     @include easeTrans(200ms);
     transform-origin: 0 0;
@@ -147,6 +154,7 @@
     cursor: pointer;
     border-radius: 30%;
     background-color: $accentColor;
+
     @include easeTrans(200ms);
     &:hover{
       background-color: #ffffff;

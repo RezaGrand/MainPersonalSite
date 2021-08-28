@@ -1,16 +1,18 @@
 /*    ---  Content Tables
-    ---    1.imports & PreloadAni      ---
-    ---    2.TopMenu Mobile           ---
-    ---     2.1.HamberMixin           ---
-    ---     2.2.LangSelectorMobile   ---
-    ---    3.MainCont                  ---
-    ---     3.1.Envelope               ---
-    ---     3.2.StampCont              ---
-    ---     3.3.ContactText            ---
-    ---     3.4.MainForm               ---
-    ---    4.Socials                   ---
-    ---    5.Footer                    ---
-    ---     5.1.Logo & Logo ToolTip    --- */
+    ---    1.imports & PreloadAni             ---
+    ---    2.Body                             ---
+    ---    3.Aside                            ---
+    ---     3.1.TopSquare                     ---
+    ---     3.2.MidSquare & HeroPic           ---
+    ---     3.3.BottomSquare                  ---
+    ---    4.Main                             ---
+    ---      4.1.TopMenu & LangSelector       ---
+    ---      4.2.FullName                     ---
+    ---    5.NameConts                        ---
+    ---    6.ShortBio                         ---
+    ---    7.Socials                          ---
+    ---    8.Logo & Logo ToolTip              ---
+    ---    9.MediaQueries                     --- */
 @font-face {
   font-family: 'shabnamregular';
   src: url("../fonts/Shabnam.woff2") format("woff2"), url("../fonts/Shabnam.woff") format("woff");
@@ -356,7 +358,7 @@ body {
 .menuLefter {
   left: 0; }
 
-.hireBtnCont {
+.resumeBtnCont {
   pointer-events: none;
   cursor: default;
   color: #00D193; }
@@ -374,225 +376,6 @@ body {
   background-color: #ffffff;
   border-radius: 20px; }
 
-.envelope {
-  position: relative;
-  width: 100%;
-  height: 92%;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-  background-color: #ffffff;
-  border-radius: 20px; }
-
-.stampCont {
-  position: absolute;
-  width: 8rem;
-  height: 8rem;
-  top: 6rem;
-  left: 1rem;
-  background-image: url("../imgs/stampAzadi.webp");
-  background-size: contain;
-  background-repeat: no-repeat;
-  filter: drop-shadow(0 0 0 #434343);
-  z-index: 6;
-  transform: rotateZ(-5deg); }
-
-.contactText {
-  width: 100%;
-  height: 40%;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 0 1rem 0 8rem;
-  font-size: clamp(0.5rem, 0.8rem, 0.8rem);
-  box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
-  color: #414345;
-  z-index: 5; }
-
-.contactTextFa {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: flex-end; }
-
-.contactTextFirstP {
-  font-weight: 700;
-  margin-bottom: 1rem; }
-
-.contactTextFirstPFa {
-  text-align: right;
-  font-family: "Almarai", sans-serif; }
-
-.contactTextSecondP {
-  line-height: 2rem; }
-
-.contactTextSecondPFa {
-  text-align: right;
-  font-family: "Almarai", sans-serif; }
-
-.formCont {
-  width: 100%;
-  height: 60%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-  color: #434343;
-  border-radius: 5px 5px 0 0; }
-
-.mainForm {
-  width: 90%;
-  height: 90%;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(8, 1fr);
-  align-items: start;
-  grid-gap: 1rem;
-  gap: 1rem; }
-
-.inputGen {
-  display: block;
-  height: 1.7rem;
-  grid-column: 2/12;
-  border: #434343 solid 1px;
-  border-radius: 5px;
-  padding-left: .5rem;
-  font-size: .9rem; }
-  .inputGen:hover, .inputGen:focus {
-    border: #00D193 solid 1px; }
-
-.labelGen {
-  display: block;
-  grid-column: 1/2;
-  height: 1.7rem;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-items: center; }
-
-.labelGenFa {
-  font-family: "Almarai", sans-serif; }
-
-.selectCont {
-  position: relative;
-  height: 1.7rem;
-  grid-column: 2/12; }
-  .selectCont::after {
-    content: "\2023";
-    position: absolute;
-    width: 1.7rem;
-    height: 1.7rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    background-color: #00D193;
-    top: 0;
-    right: 0;
-    pointer-events: none;
-    font-size: 2rem;
-    border-radius: 5px 5px 0 0;
-    transform: rotateZ(90deg);
-    color: #ffffff; }
-
-.selectCont:hover::after {
-  transform: rotateZ(0deg);
-  border-radius: 0 5px 5px 0; }
-
-#senderSubject {
-  width: 100%;
-  height: 100%;
-  font-size: .9rem;
-  cursor: pointer; }
-
-#senderSubject option {
-  font-size: .9rem; }
-
-#senderMessage {
-  resize: none;
-  height: 6rem;
-  padding: .5rem;
-  grid-column: 2/12; }
-
-.btnGen {
-  cursor: pointer;
-  height: 2rem;
-  transition: all;
-  transition-duration: 300ms;
-  transition-timing-function: ease-in-out;
-  display: block;
-  border-radius: 5px;
-  font-weight: 700;
-  color: #ffffff;
-  font-size: .7rem; }
-
-#submitBtn {
-  grid-column: 4/7;
-  background-color: #00D193; }
-  @media (max-width: 1400px) {
-    #submitBtn {
-      grid-column: 5/10; } }
-  @media (max-width: 1000px) {
-    #submitBtn {
-      grid-column: 6/12; } }
-
-#resetBtn {
-  grid-column: 2/4;
-  background-color: #EE5F4D; }
-  @media (max-width: 1400px) {
-    #resetBtn {
-      grid-column: 2/5; } }
-  @media (max-width: 1000px) {
-    #resetBtn {
-      grid-column: 2/6; } }
-
-#resetBtn:hover, #submitBtn:hover {
-  color: #434343;
-  background-color: #ffffff;
-  border: #434343 solid 1px; }
-
-#formStatus {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-  font-size: clamp(1rem, 3rem, 4rem);
-  font-weight: 700;
-  padding: 0 2rem;
-  line-height: 4rem;
-  top: 0;
-  left: 0;
-  z-index: 98;
-  pointer-events: none;
-  opacity: 0; }
-
-.formStatusRevealer {
-  opacity: 1;
-  animation-name: formStatusHider;
-  animation-duration: 3500ms;
-  animation-timing-function: ease-in-out; }
-
-@keyframes formStatusHider {
-  0% {
-    opacity: 1; }
-  25% {
-    opacity: 1; }
-  50% {
-    opacity: 1; }
-  100% {
-    opacity: 0; } }
 .socialsCont {
   width: 100%;
   height: 8%;
@@ -725,4 +508,4 @@ footer {
     bottom: 3px;
     background-color: #00D193; }
 
-/*# sourceMappingURL=contactsmobile.css.map */
+/*# sourceMappingURL=resumemobile.css.map */

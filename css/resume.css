@@ -72,13 +72,13 @@
 @keyframes slideOut {
   to {
     top: -100%; } }
-.smallScreenBio, .hamberBtnCont {
+.hamberBtnCont {
   display: none;
   opacity: 0; }
 
 body {
   height: 100vh;
-  min-height: 750px;
+  min-height: 850px;
   background: #232526;
   /* fallback for old browsers */
   /* Chrome 10-25, Safari 5.1-6 */
@@ -90,111 +90,12 @@ body {
   color: #ffffff; }
 
 .bodyCont {
-  height: 100%;
-  display: flex;
-  /*background-color: coral;*/ }
-
-aside {
-  width: 15%;
-  min-width: 250px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  transition: all;
-  transition-duration: 200ms;
-  transition-timing-function: ease-in-out;
-  /*background-color: teal;*/ }
-
-.topSquareCont, .bottomSquareCont {
-  display: block;
-  height: 33%; }
-
-.topSquare, .bottomSquare {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-  background-color: blanchedalmond;
-  background-image: url("../imgs/blueSquare.png");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-position: center;
-  filter: saturate(0%);
-  font-size: 30px;
-  font-weight: 200;
-  transition: all;
-  transition-duration: 500ms;
-  transition-timing-function: ease-in-out; }
-  .topSquare:hover, .bottomSquare:hover {
-    background-size: 125% 125%;
-    filter: saturate(100%); }
-
-.midSquare {
   position: relative;
-  height: 34%;
-  background-color: #313334;
-  background-image: url("../imgs/picBGabstract.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: left;
-  transition: all;
-  transition-duration: 500ms;
-  transition-timing-function: ease-in-out; }
-  .midSquare:hover {
-    background-position: center; }
-  .midSquare:hover .heroPic {
-    transform: scale(1.05, 1.05) rotateZ(-5deg); }
-
-.heroPic {
-  position: absolute;
-  width: 130%;
-  left: 6rem;
-  bottom: -4rem;
-  z-index: 10;
-  filter: drop-shadow(15px 15px 0 #434343);
-  transition: all;
-  transition-duration: 500ms;
-  transition-timing-function: ease-in-out;
-  /*background-color: red;*/ }
-
-.bottomSquare {
-  background-image: url("../imgs/redSquare.png");
-  background-color: forestgreen; }
-
-.webTitle, .motionTitle {
-  font-weight: 900;
-  letter-spacing: 3px;
-  margin-bottom: 10px;
-  transition: all;
-  transition-duration: 400ms;
-  transition-timing-function: ease-in-out; }
-
-.webTitle {
-  letter-spacing: 6px; }
-
-.bottomSquare:hover .webTitle, .topSquare:hover .motionTitle {
-  letter-spacing: 10px;
-  margin-bottom: 15px; }
-
-.motionTitleFa, .webTitleFa {
-  font-family: "Lalezar", cursive, sans-serif;
-  font-size: 2rem; }
-
-.webTitleFa {
-  font-size: 3rem; }
-
-.designerTitleFa, .developerTitleFa {
-  font-family: "Lalezar", cursive, sans-serif;
-  font-size: 2rem; }
-
-main {
-  width: 85%;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
-  /*background-color: yellow;*/ }
+  flex-wrap: nowrap; }
 
 .topMenu {
   width: 100%;
@@ -279,7 +180,7 @@ main {
   .downloadBtn::after, .downloadBtn::before {
     display: none; }
 
-.homeBtnCont {
+.resumeBtnCont {
   pointer-events: none;
   cursor: default;
   color: #00D193; }
@@ -375,168 +276,55 @@ main {
 .selectedLangFa {
   font-family: "Almarai", sans-serif; }
 
-.nameCont {
-  height: 45%;
-  display: flex; }
-
-.imTitle {
-  width: 20%;
+.mainCont {
+  width: 70%;
+  height: 70%;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: flex-end;
-  align-items: flex-end;
-  padding-bottom: .15em;
-  font-size: 3.5vw;
-  font-weight: 200;
-  /*background-color: olivedrab;*/ }
+  align-items: center;
+  justify-self: center;
+  align-self: center;
+  margin: 3rem 0 0 0;
+  background-color: #ffffff;
+  border-radius: 20px; }
 
-.fullName {
-  position: relative;
-  width: 80%;
+.socialsCont {
+  width: 10%;
   height: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  align-items: flex-end;
-  padding-left: 3vw;
-  padding-bottom: .15em;
-  font-size: 4vw;
-  font-weight: 900;
-  /*background-color: red;*/
-  background-image: url("../imgs/nameBgMyRect.svg");
-  background-repeat: no-repeat;
-  background-position: bottom left;
-  background-size: 55vw 7vw;
-  filter: drop-shadow(5px 5px #ffffff);
-  animation-name: nameBgAni;
-  animation-direction: alternate;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-delay: 2s;
-  animation-duration: 5s; }
-
-.fullNameFa {
-  font-family: "Lalezar", cursive, sans-serif;
-  font-size: 5.5vw;
-  font-weight: 400;
-  padding-bottom: 0;
-  padding-left: 5vw; }
-
-@keyframes nameBgAni {
-  0% {
-    transform: rotateZ(0deg); }
-  10% {
-    transform: rotateZ(-0.5deg); }
-  20% {
-    transform: rotateZ(0.5deg); }
-  30% {
-    transform: rotateZ(0deg); }
-  40% {
-    transform: rotateZ(0deg); }
-  50% {
-    transform: rotateZ(-0.5deg); }
-  60% {
-    transform: rotateZ(0.5deg); }
-  70% {
-    transform: rotateZ(0deg); }
-  80% {
-    transform: rotateZ(0deg); }
-  90% {
-    transform: rotateZ(-0.5deg); }
-  100% {
-    transform: rotateZ(0.5deg); } }
-.shortBio {
-  height: 15%;
-  padding-left: 24%;
-  padding-top: 1.5rem;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  /*background-color: blueviolet;*/ }
-
-.shortBio p {
-  font-family: "Quicksand", sans-serif;
-  font-size: 2vw;
-  font-weight: 400;
-  line-height: 3.5rem;
-  /*background-color: chocolate;*/ }
-
-.bigScreenBioFa {
-  display: flex;
-  flex-flow: column;
-  align-items: flex-end;
-  padding-right: 15vw; }
-
-.shortBio:hover .boldRedText {
-  color: #00D193; }
-
-.boldRedText {
-  color: #EE5F4D;
-  font-weight: 600;
-  transition: all;
-  transition-duration: 500ms;
-  transition-timing-function: ease-in-out; }
-
-.smallText {
-  font-size: 1vw; }
-
-.socials {
-  height: 20%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  justify-content: center;
   align-items: center;
-  padding-top: 4rem;
-  /*background-color: rebeccapurple;*/ }
-
-.socialWhiteSpace {
-  width: 24%;
-  height: 100%;
-  transition: all;
-  transition-duration: 200ms;
-  transition-timing-function: ease-in-out;
-  /*background-color: #ffffff;*/ }
-
-.socialsText {
-  text-align: left;
-  white-space: nowrap;
-  /*background-color: hotpink;*/ }
-  .socialsText h3 {
-    font-family: "Quicksand", sans-serif;
-    /*font-size: 1.2vw;*/
-    font-size: clamp(1.2rem, 1.2vw, 1.3vw);
-    font-weight: 600;
-    line-height: 3.5rem;
-    /*background-color: #fdf497;*/ }
+  background-color: #00D193;
+  border-radius: 0 20px 20px 0; }
 
 .socialIconsCont {
-  width: 30rem;
+  width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: nowrap;
   justify-content: space-evenly;
   align-items: center;
+  padding: 4rem 0;
   /*background-color: yellow;*/ }
 
 .socialwrapper {
-  width: 4rem;
-  height: 4rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 40%;
   background-color: #414345;
-  box-shadow: 2px 2px 2px #00D193;
-  /*box-shadow:4px 6px 5px rgba(0, 0, 0, .1) ;*/
   transition: all;
   transition-duration: 500ms;
   transition-timing-function: ease-in-out; }
   .socialwrapper:hover {
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); }
+    transform: rotateZ(180deg); }
 
 .socialIcon {
-  width: 4rem;
-  height: 4rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 40%;
   /*background-color: #414345;*/
   background-size: 50%;
@@ -549,7 +337,7 @@ main {
   .socialIcon:hover {
     background-size: 60%;
     filter: saturate(100%);
-    transform: rotateZ(360deg); }
+    transform: rotateZ(180deg); }
 
 .linkedinIcon {
   background-image: url("../imgs/linkedinicon.svg"); }
@@ -594,14 +382,16 @@ main {
     background-color: #430297; }
 
 footer {
+  position: absolute;
   height: 10%;
+  bottom: 0;
+  right: 0;
   padding-right: 20px;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
-  align-items: flex-end;
-  /*background-color: olivedrab;*/ }
+  align-items: flex-end; }
 
 .logoCont {
   position: relative;
@@ -660,83 +450,4 @@ footer {
     bottom: 4px;
     background-color: #00D193; }
 
-@media (max-width: 1500px) {
-  .langMotherCont {
-    right: 1rem; } }
-@media (max-width: 970px) {
-  aside {
-    width: 10%;
-    min-width: 200px; }
-
-  .topMenu {
-    font-size: .75rem; }
-
-  .topMenuBtnCont {
-    margin-right: 1vw;
-    margin-left: 1vw;
-    padding: 0 2px; }
-
-  .langMotherCont {
-    right: 1rem;
-    width: 3.5rem;
-    font-size: .75rem; }
-
-  .faLangSelector, .engLangSelector {
-    padding: 0 6px; }
-
-  .langMotherCont img {
-    width: 20px; }
-
-  .langArrow {
-    font-size: 1rem; }
-
-  .heroPic {
-    position: absolute;
-    width: 130%;
-    left: 3rem;
-    bottom: -1rem; }
-
-  .nameCont {
-    padding-left: 7rem;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-end;
-    align-items: flex-start;
-    /*background-color: aqua;*/ }
-
-  .imTitle {
-    justify-content: flex-start;
-    align-items: flex-end;
-    padding-bottom: 0;
-    font-size: 4vw; }
-
-  .fullName {
-    width: 100%;
-    height: 20%; }
-
-  .socialWhiteSpace {
-    width: 5%;
-    height: 100%; }
-
-  .socialIconsCont {
-    width: 22rem; }
-
-  .socialwrapper {
-    width: 3rem;
-    height: 3rem; }
-
-  .socialIcon {
-    width: 3rem;
-    height: 3rem; }
-
-  .shortBio {
-    padding-top: 2rem; }
-    .shortBio p {
-      font-size: 2.5vw;
-      line-height: 3rem; }
-
-  .smallText {
-    font-size: 1.75vw; } }
-
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=resume.css.map */
