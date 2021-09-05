@@ -80,6 +80,7 @@ html {
   opacity: 0; }
 
 body {
+  position: relative;
   width: 100%;
   background: #ffffff;
   overflow-x: hidden;
@@ -800,6 +801,9 @@ body {
   background-color: #ffffff;
   padding-top: 18rem;
   padding-bottom: 4rem; }
+  @media screen and (max-width: 1200px) {
+    .resumeEduSec {
+      padding-top: 12rem; } }
 
 .eduTitleCont {
   position: relative;
@@ -844,21 +848,33 @@ body {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem; }
+  @media screen and (max-width: 1200px) {
+    .eduSubHeader {
+      font-size: 1.5rem;
+      margin-right: 1rem;
+      margin-left: 1rem; } }
 
 .eduColumn {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  width: 35%;
+  width: 45%;
   height: 20rem;
   padding-left: 2rem;
   padding-top: 4rem;
   border-left: 8px solid #00D193; }
+  @media screen and (max-width: 1100px) {
+    .eduColumn {
+      padding-left: 1rem; } }
 
 .normEduColumn {
   width: 35%;
   height: 25rem;
-  margin-left: 22rem; }
+  margin-left: 14vw;
+  margin-right: 2rem; }
+  @media screen and (max-width: 1100px) {
+    .normEduColumn {
+      margin-left: 6vw; } }
 
 .EduTitleContGen {
   position: relative;
@@ -878,6 +894,16 @@ body {
     top: 0; }
   .EduTitleContGen:hover::before {
     background-color: #fd5949; }
+  @media screen and (max-width: 1100px) {
+    .EduTitleContGen::before {
+      content: "";
+      position: absolute;
+      width: 0.7rem;
+      height: 0.7rem;
+      border: 7px solid #00D193;
+      border-radius: 50%;
+      left: -2rem;
+      top: -.2rem; } }
 
 .EduTitleContGenRevealer {
   animation-name: EduTitleContGenRevealerAni;
@@ -896,6 +922,11 @@ body {
 .eduTitleGen {
   font-size: 1.5rem;
   margin-bottom: 1rem; }
+  @media screen and (max-width: 1100px) {
+    .eduTitleGen {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: .8rem; } }
 
 .resumeExpSec {
   width: 100%;

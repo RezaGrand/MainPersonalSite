@@ -247,3 +247,5 @@ const employersObserver = new IntersectionObserver(
         })}, employersObserverOptions)
 
 employersObserver.observe(resumeExpSec);
+
+console.log("yeah");
