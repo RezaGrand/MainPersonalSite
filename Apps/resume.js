@@ -133,4 +133,117 @@ document.addEventListener("click", function(){
     }
 });
 
+// --------------------------       Intersection Observers      ---------------------------
+const developCont = document.querySelector(".developCont");
+const skillsSection = document.querySelector(".resumeSkillsSec");
+const resumeEduSec = document.querySelector(".resumeEduSec");
+const resumeExpSec = document.querySelector(".resumeExpSec");
+const writingCont = document.querySelector(".writingCont");
+const brandsMotherCont = document.querySelector(".brandsMotherCont");
+const brandsPics = document.querySelectorAll(".brandsPic");
+const EduTitleConts = document.querySelectorAll(".EduTitleContGen");
+const expConts = document.querySelectorAll(".expCont");
+const employersCards = document.querySelectorAll(".employersCard");
 
+
+const skillsObserverOptions = {
+    rootMargin: "0px 0px -60% 0px"
+}
+const skillsObserver = new IntersectionObserver(
+    (entries, skillsObserver)=>{
+        entries.forEach(entry =>{
+        if (entry.isIntersecting){
+            developCont.classList.add("developContAppear");
+            writingCont.classList.add("writingContAppear");
+            skillsObserver.unobserve(entry.target);
+            }
+        })}, skillsObserverOptions)
+
+skillsObserver.observe(skillsSection);
+
+
+
+
+const eduObserverOptions = {
+    rootMargin: "0px 0px 0px 0px"
+}
+const eduObserver = new IntersectionObserver(
+    (entries, eduObserver)=>{
+        entries.forEach(entry =>{
+            if (entry.isIntersecting){
+                brandsMotherCont.classList.add("brandsRevealer");
+                eduObserver.unobserve(entry.target);
+            }
+        })}, eduObserverOptions)
+
+eduObserver.observe(resumeEduSec);
+
+brandsMotherCont.addEventListener("animationend", ()=>{
+    brandsPics.forEach(brandpic =>{
+            const aniDelay = brandpic.getAttribute("data-animation-delay");
+            brandpic.style.animationDelay = `${aniDelay}ms`;
+            brandpic.classList.add("brandsPicRevealer");
+        }
+    )})
+
+
+
+
+const eduTitlesObserverOptions = {
+    rootMargin: "0px 0px -75% 0px"
+}
+const eduTitlesObserver = new IntersectionObserver(
+    (entries, eduObserver)=>{
+        entries.forEach(entry =>{
+            if (entry.isIntersecting){
+                EduTitleConts.forEach( eduTitle=>{
+                    const aniDelay = eduTitle.getAttribute("data-animation-delay");
+                    eduTitle.style.animationDelay = `${aniDelay}ms`;
+                    eduTitle.classList.add("EduTitleContGenRevealer");
+                })
+                eduObserver.unobserve(entry.target);
+            }
+        })}, eduTitlesObserverOptions)
+
+eduTitlesObserver.observe(resumeEduSec);
+
+
+
+
+
+const expObserverOptions = {
+    rootMargin: "0px 0px -50% 0px"
+}
+const expObserver = new IntersectionObserver(
+    (entries, eduObserver)=>{
+        entries.forEach(entry =>{
+            if (entry.isIntersecting){
+                expConts.forEach(expCont=>{
+                    const aniDelay = expCont.getAttribute("data-animation-delay");
+                    expCont.style.animationDelay = `${aniDelay}ms`;
+                    expCont.classList.add("expContRevealer");
+                })
+                eduObserver.unobserve(entry.target);
+            }
+        })}, expObserverOptions)
+
+expObserver.observe(resumeExpSec);
+
+
+const employersObserverOptions = {
+    rootMargin: "0px 0px -60% 0px",
+}
+const employersObserver = new IntersectionObserver(
+    (entries, eduObserver)=>{
+        entries.forEach(entry =>{
+            if (entry.isIntersecting){
+                employersCards.forEach(employerCard=>{
+                    const aniDelay = employerCard.getAttribute("data-animation-delay");
+                    employerCard.style.animationDelay = `${aniDelay}ms`;
+                    employerCard.classList.add("employersRevealer");
+                })
+                eduObserver.unobserve(entry.target);
+            }
+        })}, employersObserverOptions)
+
+employersObserver.observe(resumeExpSec);
