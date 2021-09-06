@@ -162,7 +162,8 @@ body {
   transition-timing-function: ease-in-out;
   transition-timing-function: ease-in-out;
   box-shadow: 10px 0 100px #000000;
-  background-color: #313334; }
+  background-color: #313334;
+  color: #ffffff; }
 
 .topMenuBtnCont {
   display: inline-block;
@@ -283,7 +284,8 @@ body {
   left: 5rem;
   z-index: 98;
   font-weight: 700;
-  font-size: 1rem; }
+  font-size: 1rem;
+  color: #ffffff; }
 
 .selectedLang {
   width: 3rem;
