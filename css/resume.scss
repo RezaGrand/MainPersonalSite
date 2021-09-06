@@ -23,11 +23,12 @@
 
 ::-webkit-scrollbar {
   width: 1vw;
+  //max-width: 15px;
 }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  height: 250px;
+  height: 350px;
   background-color: $accentColor;
   &:hover{
     background-color: #68f1c9;
