@@ -73,7 +73,7 @@
   to {
     top: -100%; } }
 ::-webkit-scrollbar {
-  width: 8px; }
+  width: .5vw; }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
