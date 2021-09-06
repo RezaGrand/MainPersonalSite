@@ -21,6 +21,19 @@
 
 .hamberBtnCont{display: none;opacity: 0;}
 
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  height: 250px;
+  background-color: $accentColor;
+  &:hover{
+    background-color: #68f1c9;
+  }
+}
+
 body{
   @include advancedPosition(relative,100%,null);
   background: #ffffff;

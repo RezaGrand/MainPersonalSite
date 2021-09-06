@@ -19,6 +19,19 @@
 
 @include preloadeAnimation;
 
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  height: 250px;
+  background-color: $accentColor;
+  &:hover{
+    background-color: #68f1c9;
+  }
+}
+
 body{
   @include advancedPosition(relative,100%,null);
   background: #ffffff;
@@ -334,6 +347,18 @@ body{
   @include easeTrans(300ms);
   overflow-x: scroll;
   overflow-y: hidden;
+}
+
+.brandsCont::-webkit-scrollbar {
+  height: 8px;
+}
+
+.brandsCont::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #414345;
+  &:hover{
+    background-color: #767676;
+  }
 }
 
 .brandsPic{

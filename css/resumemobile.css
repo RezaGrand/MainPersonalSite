@@ -72,6 +72,16 @@
 @keyframes slideOut {
   to {
     top: -100%; } }
+::-webkit-scrollbar {
+  width: 12px; }
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  height: 250px;
+  background-color: #00D193; }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #68f1c9; }
+
 body {
   position: relative;
   width: 100%;
@@ -679,6 +689,15 @@ body {
   transition-timing-function: ease-in-out;
   overflow-x: scroll;
   overflow-y: hidden; }
+
+.brandsCont::-webkit-scrollbar {
+  height: 8px; }
+
+.brandsCont::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #414345; }
+  .brandsCont::-webkit-scrollbar-thumb:hover {
+    background-color: #767676; }
 
 .brandsPic {
   width: 6rem;
