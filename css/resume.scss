@@ -34,6 +34,7 @@
   }
 }
 
+
 body{
   @include advancedPosition(relative,100%,null);
   background: #ffffff;
@@ -41,6 +42,8 @@ body{
   //min-height: 900px;
   font-family: $mainFont;
   color: #414345;
+  scrollbar-width: thin;
+  scrollbar-color: $accentColor transparent;
 }
 
 .bodyCont{

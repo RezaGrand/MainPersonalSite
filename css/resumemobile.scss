@@ -20,7 +20,7 @@
 @include preloadeAnimation;
 
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -31,6 +31,7 @@
     background-color: #68f1c9;
   }
 }
+
 
 body{
   @include advancedPosition(relative,100%,null);
@@ -46,6 +47,8 @@ body{
   overflow-x: hidden;
   //@include advancedFlex(column,null,null);
   //background-color: coral;
+  scrollbar-width: thin;
+  scrollbar-color: $accentColor transparent;
 }
 
 @include hamberMixin;
@@ -347,6 +350,8 @@ body{
   @include easeTrans(300ms);
   overflow-x: scroll;
   overflow-y: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: #414343 transparent;
 }
 
 .brandsCont::-webkit-scrollbar {
